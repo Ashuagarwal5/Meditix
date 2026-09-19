@@ -1,0 +1,7 @@
+primary color : #0198ae
+
+light bG:       #dbf9fd
+
+h1:  text-[36px] sm:text-[46px] xl:text-[55px]
+
+Description 
