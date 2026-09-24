@@ -9,7 +9,7 @@ import PharmacyScaleSection from "./components/PharmacyScaleSection";
 import HowItWorks from "./components/HowItWorks";
 import Benefits from "./components/Benefits";
 import Cta from "./components/Cta";
-import FAQSection from "../components/common/FAQSection";
+// import FAQSection from "../components/common/FAQSection";
 
 import homeFAQs from "../../assets/homeFAQs.webp";
 // import homeFAQs from "../../";
@@ -64,14 +64,14 @@ const page = () => {
       <HowItWorks />
       <Benefits />
       <Cta />
-      <FAQSection
+      {/* <FAQSection
         badge="Help & Support"
         title="Frequently Asked Questions"
         description="Find answers to common questions about our real estate ERP platform, inventory management, procurement, and project operations."
         image={homeFAQs}
         imageAlt="Real estate ERP support"
         faqs={faqData}
-      />
+      /> */}
     </div>
   );
 };

@@ -12,13 +12,13 @@ import homeStep03 from "@/assets/homeStep03.png";
 const steps = [
   {
     step: "STEP 01",
-    title: "Bring Your Pharmacy In",
+    title: "Set Up Your Pharmacy",
     description:
-      "We help you configure products, stock, suppliers, taxes, and team access from day one. Our onboarding team assists with data migration from your existing registers or software, so you're not starting from a blank slate.",
+      "Our onboarding team helps configure your products, suppliers, tax settings, and staff roles from scratch, including assisted data migration from your current registers or software, so you never start from zero.",
     tags: [
       { label: "Data Migration" },
-      { label: "Tax & Roles" },
-      { label: "Fast Onboarding", type: "blue" },
+      { label: "Tax & Role Setup" },
+      { label: "Guided Onboarding", type: "blue" },
     ],
     image: homeStep01,
     imageAlt: "Digital catalog onboarding",
@@ -26,13 +26,13 @@ const steps = [
   },
   {
     step: "STEP 02",
-    title: "Run the Work in One Flow",
+    title: "Let Everything Work Together",
     description:
-      "Billing updates inventory. Purchases update costs. Every action stays connected across your pharmacy, automatically - meaning your team doesn't have to manually update multiple systems for a single transaction.",
+      "A single billing entry automatically updates your inventory. A purchase automatically updates your costing. No department has to manually sync data with another; it all happens in real time.",
     tags: [
       { label: "Real-time Sync", type: "blue" },
-      { label: "Auto Stock Deduct" },
-      { label: "Live Costing" },
+      { label: "Auto Stock Deduction" },
+      { label: "Live Cost Updates" },
     ],
     image: homeStep02,
     imageAlt: "Pharmacy workflow dashboard",
@@ -40,13 +40,13 @@ const steps = [
   },
   {
     step: "STEP 03",
-    title: "Make better decisions",
+    title: "Decide With Real Data",
     description:
-      "See sales, margins, expiry risks, and branch performance while they're still actionable - not after the month is over. Catch problems early, and make pricing and stocking decisions based on real data instead of guesswork.",
+      "Track sales, margins, expiry risk, and branch-wise performance as it happens, not weeks later. Spot problems early and make pricing or stocking calls based on actual numbers, not guesswork.",
     tags: [
       { label: "Expiry Alerts", type: "red" },
       { label: "Branch Analytics" },
-      { label: "Profit Margins", type: "blue" },
+      { label: "Margin Tracking", type: "blue" },
     ],
     image: homeStep03,
     imageAlt: "Pharmacy analytics dashboard",
@@ -95,12 +95,12 @@ function ContentCard({ item, index }) {
       </div>
 
       {/* Title */}
-      <h3 className=" pr-10 text-[20px] xl:text-[22px] font-semibold leading-tight tracking-[-0.015em] text-[#041a35] " >
+      <h3 className=" font-fraunces pr-10 text-[20px] xl:text-[22px] font-semibold leading-tight tracking-[-0.015em] text-[#041a35] " >
         {item.title}
       </h3>
 
       {/* Description */}
-      <p className="mt-2 max-w-[480px] text-[16px] text-justify leading-[1.55] text-slate-600">
+      <p className=" font-nunito mt-2 max-w-[480px] text-[16px] text-justify leading-[1.55] text-slate-600 ">
         {item.description}
       </p>
 
@@ -223,7 +223,7 @@ export default function HowItWorks() {
             <span className="h-px w-6 bg-[#0198ae]" />
 
             <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#0198ae]">
-              Simple from day one
+              GET STARTED WITHOUT THE HASSLE
             </span>
           </div>
         </motion.div>
@@ -245,11 +245,11 @@ export default function HowItWorks() {
             delay: 0.08,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className=" text-[32px] sm:text-[39px] lg:text-[43px] font-medium leading-[1.02] tracking-[-0.045em] text-[#041a35] "
+          className=" font-fraunces text-[32px] sm:text-[39px] lg:text-[43px] font-medium leading-[1.02] tracking-[-0.045em] text-[#041a35] "
         >
-          From setup to insight in
+          From Day One to Data-Driven Decisions In 
           <br className="hidden sm:block" />
-          <span className="text-[#0198ae]">Three Clear Steps.</span>
+          <span className="text-[#0198ae]">Three Steps.</span>
         </motion.h2>
       </div>
 

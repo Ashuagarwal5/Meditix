@@ -5,117 +5,128 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { AlertTriangle, Package, Zap, ReceiptText, Info } from "lucide-react";
 
+// assets
 import homeHero from "../../../assets/homeHero.webp";
-import AlternatingSection from "../../components/common/AlternatingSection";
+import supplyChainManagementHero from "../../../assets/supplyChainManagementHero.png";
+import supplyChainManagement01 from "../../../assets/supplyChainManagement01.png";
+import supplyChainManagement02 from "../../../assets/supplyChainManagement02.png";
+import supplyChainManagement03 from "../../../assets/supplyChainManagement03.png";
 import aboutWhoWeAre from "../../../assets/aboutWhoWeAre.webp";
+import homeFAQs from "../../../assets/homeFAQs.webp";
+
+// components
+import AlternatingSection from "../../components/common/AlternatingSection";
 import Cta from "@/app/home/components/Cta";
 import FAQSection from "@/app/components/common/FAQSection";
-
-import homeFAQs from "../../../assets/homeFAQs.webp";
+import Link from "next/link";
 
 const features = [
   {
-    id: 1,
-    label: "Inventory Management",
-    title: "Keep Complete Control of Your Inventory",
+    id: 1, 
+    title: "Keep Complete Control of Your Supply Network",
+    highlight: "Supply Network",
     description:
-      "Manage materials, track stock levels, and maintain complete visibility across different sites from one centralized platform.",
-    image: aboutWhoWeAre,
+      "Track shipments, manage distributor relationships, and maintain complete visibility across your entire supply network — all from one centralized pharmacy supply chain management system that keeps stock moving smoothly and on time.",
+    image: supplyChainManagement01,
     imageAlt: "Inventory management dashboard",
     bullets: [
-      "Track available and reserved inventory",
-      "Manage stock across multiple project sites",
-      "Transfer materials between different locations",
-      "Maintain accurate inventory records",
-    ],
-    buttonText: "Explore Inventory",
-    buttonLink: "/inventory",
+      "Track shipments from distributor to store.",
+      "Manage multiple distributors and vendors.",
+      "Monitor lead times and delivery performance.",
+      "Maintain accurate, audit-ready supply records.",
+    ], 
   },
 
   {
-    id: 2,
-    label: "Procurement",
-    title: "Simplify Your Entire Procurement Process",
+    id: 2, 
+    title: "Simplify Your Entire Procurement & Logistics Process",
+    highlight: ["Entire Procurement", "Logistics Process"],
     description:
-      "Move from material requests to purchase orders without relying on spreadsheets, phone calls, or disconnected systems.",
-    image: aboutWhoWeAre,
+      "Move from demand forecasting to distributor delivery in just a few steps — no more relying on spreadsheets, phone calls, or disconnected systems. A streamlined pharmacy supply chain workflow keeps every order, shipment, and delivery in one place.",
+    image: supplyChainManagement02,
     imageAlt: "Procurement management system",
     bullets: [
-      "Create and manage material requests",
-      "Generate and compare vendor bids",
-      "Create purchase orders quickly",
-      "Monitor procurement status in real time",
+      "Create and manage stock replenishment requests.",
+      "Generate and compare distributor bids.",
+      "Create purchase orders quickly.",
+      "Monitor shipment and delivery status in real time.",
     ],
   },
 
   {
-    id: 3,
-    label: "Project Management",
-    title: "Manage Every Project From One Place",
+    id: 3, 
+    title: "Manage Your Entire Supply Chain From One Place",
+    highlight: ["Entire Supply Chain", "One Place"],
     description:
-      "Get a complete view of your projects, materials, teams, and activities while keeping every stakeholder connected.",
-    image: aboutWhoWeAre,
+      "Get a complete, real-time view of distributors, shipments, and stock levels across every branch — all connected through a single dashboard. This is the core of a true pharmacy supply chain management solution, built to keep multi-store pharmacies stocked and running smoothly.",
+    image: supplyChainManagement03,
     imageAlt: "Project management dashboard",
     bullets: [
-      "Manage multiple construction sites",
-      "Create and maintain project BOQs",
-      "Assign users to specific projects",
-      "Monitor project activities from one dashboard",
-    ],
-    buttonText: "View Projects",
-    buttonLink: "/projects",
+      "Manage supply chains across multiple pharmacy branches.",
+      "Create and maintain distributor and vendor records.",
+      "Assign supply chain access to specific staff.",
+      "Monitor logistics activities from one dashboard.",
+    ], 
   },
 ];
 
 const faqData = [
   {
     id: 1,
-    question: "What is real estate ERP software?",
+    question: "What is a pharmacy supply chain management solution?",
     answer:
-      "Real estate ERP software brings project management, procurement, inventory, accounting, vendor management, and operational data into one centralized system.",
+      "A pharmacy supply chain management solution is software that connects distributors, warehouses, and pharmacy stores on one platform, streamlining ordering, shipment tracking, and delivery to keep stock consistently available.",
   },
   {
     id: 2,
-    question: "Can I manage multiple construction sites?",
+    question:
+      "How does supply chain software prevent medicine shortages?",
     answer:
-      "Yes. You can manage multiple sites and maintain separate inventory, material requests, users, vendors, BOQs, purchase orders, and project information for each location.",
+      "By using automated distributor ordering, the system generates purchase orders based on real demand and current stock levels, ensuring fast-moving medicines are reordered before they run out.",
   },
   {
     id: 3,
-    question: "Can site teams request materials?",
+    question: "Can I track shipments in real time?",
     answer:
-      "Yes. Site teams can create material requests by selecting the required material, quantity, project site, description, and supporting images.",
+      "Yes, real-time shipment tracking lets you follow every order from distributor dispatch to warehouse to store shelf, so you always know exactly where your stock is.",
   },
   {
     id: 4,
-    question: "Can I manage vendors from the platform?",
+    question: "How does this system speed up warehouse-to-store delivery?",
     answer:
-      "Yes. Vendors can be onboarded and managed centrally. You can maintain vendor details, track purchases, manage bids, and generate purchase orders.",
+      "Optimized routing and centralized dispatch planning, part of a strong supply chain workflow management system, help medicines move from warehouse to store shelves faster, reducing stockouts.",
   },
   {
     id: 5,
-    question: "Does the system support inventory transfers?",
+    question: "Can I manage multiple distributors and vendors from one platform?",
     answer:
-      "Yes. Materials can be transferred between different project sites while maintaining records of the source site, destination site, quantities, and transfer status.",
+      "Absolutely. The platform supports pharmacy procurement management across multiple distributors, letting you compare bids, place orders, and track performance all in one place.",
   },
   {
     id: 6,
-    question: "Can I generate purchase orders?",
+    question: "Does the system integrate directly with distributors?",
     answer:
-      "Yes. Purchase orders can be generated after bid evaluation and negotiation, allowing your procurement workflow to stay organized and traceable.",
+      "Yes, direct integration through this supply chain management software connects distributors and pharmacies in real time, replacing manual phone calls and paperwork with automated updates.",
+  },
+  {
+    id: 7,
+    question:
+      "Is this supply chain solution suitable for multi-branch pharmacy networks?",
+    answer:
+      "Yes, the platform is built for scale — offering centralized visibility, role-based access, and real-time syncing across every branch, making it ideal for multi-store pharmacy supply chain management.",
   },
 ];
 
 const page = () => {
   const benefits = [
-    "Real-time business insights",
-    "Easy workflow management",
-    "Simple and intuitive interface",
-    "Built for growing businesses",
+    "Real-time shipment tracking.",
+    "Easy supply chain workflow management.",
+    "Simple and intuitive interface.",
+    "Built for growing pharmacy networks.",
   ];
 
   return (
-    <main className="overflow-hidden bg-white">
+    <>
       {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-white">
         {/* Background glow */}
@@ -148,7 +159,7 @@ const page = () => {
             <div className="relative w-full">
               <div className=" relative overflow-hidden rounded-[20px] border border-[#D8E6E8] bg-white p-2 shadow-[0_25px_70px_rgba(22,65,77,0.12)] sm:rounded-[26px] sm:p-3 ">
                 <Image
-                  src={homeHero}
+                  src={supplyChainManagementHero}
                   alt="Business dashboard"
                   width={900}
                   height={700}
@@ -158,55 +169,6 @@ const page = () => {
                   className=" block h-auto w-full rounded-[15px] object-cover sm:rounded-[20px] "
                 />
               </div>
-
-              {/* Floating card */}
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 15,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.65,
-                  ease: "easeOut",
-                }}
-                className="
-                  absolute
-                  -bottom-6
-                  right-3
-                  hidden
-                  items-center
-                  gap-3
-                  rounded-2xl
-                  border
-                  border-slate-100
-                  bg-white
-                  px-4
-                  py-3
-                  shadow-[0_16px_40px_rgba(20,67,77,0.14)]
-
-                  sm:flex
-                  lg:-right-5
-                "
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0198ae]/10">
-                  <CheckCircle2 className="h-5 w-5 text-[#0198ae]" />
-                </div>
-
-                <div>
-                  <p className="text-[11px] font-medium text-slate-400">
-                    Business Growth
-                  </p>
-
-                  <p className="mt-0.5 text-[13px] font-semibold text-slate-800">
-                    Smarter. Faster. Better.
-                  </p>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
 
@@ -248,7 +210,7 @@ const page = () => {
                 <span className="h-2 w-2 rounded-full bg-[#0198ae]" />
 
                 <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0198ae] sm:text-xs">
-                  Smarter Business Management
+                  SMARTER SUPPLY CHAIN CONTROL
                 </span>
               </div>
             </motion.div>
@@ -269,6 +231,7 @@ const page = () => {
                 ease: "easeOut",
               }}
               className="
+              font-fraunces 
                 mt-5
                 max-w-[650px]
                 text-[38px]
@@ -285,8 +248,8 @@ const page = () => {
                 xl:text-[60px]
               "
             >
-              Run your business with{" "}
-              <span className="text-[#0198ae]">clarity and confidence.</span>
+              Move medicines with{" "}
+              <span className="text-[#0198ae]">speed and precision.</span>
             </motion.h1>
 
             {/* Description */}
@@ -305,20 +268,22 @@ const page = () => {
                 ease: "easeOut",
               }}
               className="
+              font-nunito 
                 mt-5
                 max-w-[590px]
-                text-[15px]
+                text-[16px] sm:text-[18px]
                 leading-7
                 text-slate-600
 
                 sm:mt-6
-                sm:text-[17px]
+               
                 sm:leading-8
               "
             >
-              Simplify everyday operations, monitor performance, and make better
-              decisions with one powerful platform designed to keep your
-              business moving forward.
+              Connect distributors, warehouses, and stores on one platform with
+              a complete pharmacy supply chain management solution built to
+              reduce delays, prevent shortages, and keep every branch stocked
+              and ready.
             </motion.p>
 
             {/* Benefits */}
@@ -353,11 +318,11 @@ const page = () => {
                   }}
                   className="flex items-start gap-2.5 text-left"
                 >
-                  <div className="mt-[2px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0198ae]/10">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-[#0198ae]" />
+                  <div className="mt-[2px] flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0198ae]/10">
+                    <CheckCircle2 className="h-4 w-4 text-[#0198ae]" />
                   </div>
 
-                  <span className="text-[14px] font-medium leading-5 text-slate-700">
+                  <span className="font-nunito text-[18px] font-medium leading-5 text-slate-700">
                     {item}
                   </span>
                 </motion.div>
@@ -393,8 +358,8 @@ const page = () => {
                 lg:mt-9
               "
             >
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="
                   group
                   inline-flex
@@ -420,58 +385,8 @@ const page = () => {
               >
                 Get Started
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-
-              <a
-                href="#contact"
-                className="
-                  group
-                  inline-flex
-                  min-h-[48px]
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-xl
-                  border
-                  border-[#0198ae]/30
-                  bg-white
-                  px-6
-                  py-3
-                  text-[14px]
-                  font-semibold
-                  text-[#0198ae]
-                  transition-all
-                  duration-300
-
-                  hover:-translate-y-0.5
-                  hover:border-[#0198ae]
-                  hover:bg-[#0198ae]/5
-                "
-              >
-                Learn More
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              </Link>
             </motion.div>
-
-            {/* Bottom text */}
-            <motion.p
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              transition={{
-                duration: 0.5,
-                delay: 0.85,
-              }}
-              className="mt-5 text-[11px] font-medium text-slate-400 sm:text-xs"
-            >
-              Simple setup <span className="mx-1 text-[#0198ae]/50">•</span>
-              No complex onboarding{" "}
-              <span className="mx-1 text-[#0198ae]/50">•</span>
-              Built to scale
-            </motion.p>
           </div>
         </div>
       </section>
@@ -489,14 +404,19 @@ const page = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="mx-auto mb-10 text-center sm:mb-12"
           >
-            <h2 className="text-[30px] font-medium leading-[1.15] tracking-[-0.03em] text-[#142536] sm:text-[38px] lg:text-[44px]">
-              Why Pharmacy Owners In India Trust{" "}
-              <span className="font-semibold text-[#0198ae]">Meditix</span>
+            <h2 className="font-fraunces text-[30px] font-medium leading-[1.15] tracking-[-0.03em] text-[#142536] sm:text-[38px] lg:text-[44px]">
+              Everything Your Pharmacy Needs for
+              <span className="font-semibold text-[#0198ae]">
+                {" "}
+                Smarter Supply Chain{" "}
+              </span>
+              Control
             </h2>
 
-            <p className="mt-3 text-[16px] sm:text-[18px] leading-6 text-[#7A8B99]">
-              See how modern pharmacies overcome everyday operational
-              challenges.
+            <p className="font-nunito mt-3 text-[16px] sm:text-[18px] leading-6 text-[#7A8B99]">
+              From distributor orders to store delivery, see how realitix’s
+              pharmacy supply chain management solution helps you move stock
+              faster, reduce shortages, and cut costs.
             </p>
           </motion.div>
 
@@ -534,27 +454,38 @@ const page = () => {
                     </span>
                   </div>
 
-                  <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
-                    Medicines expire on the shelf before they ever sell.
+                  <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                    Real-Time Shipment Tracking
                   </h3>
                 </div>
 
                 {/* Right */}
                 <div className="border-t border-[#E4ECEF] pt-6 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-1">
-                  <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
-                    ₹0
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
+                    100%
                   </h4>
 
-                  <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
-                    lost to expiry
+                  <p className="font-nunito mt-1 text-[14px] font-medium text-[#8A9AA6]">
+                    shipment visibility
                   </p>
 
-                  <p className="mt-3 text-[16px] leading-[1.65] text-[#60727F]">
-                    Batch-wise alerts warn you weeks ahead, return or{" "}
+                  <p className="font-nunito mt-3 text-[16px] leading-[1.65] text-[#60727F]">
+                    Track every order from
                     <span className="font-semibold text-[#263C4D]">
-                      push that stock in time
+                      {" "}
+                      distributor to warehouse{" "}
                     </span>
-                    , and keep the cash you used to write off.
+                    to
+                    <span className="font-semibold text-[#263C4D]">
+                      {" "}
+                      store shelf{" "}
+                    </span>
+                    , so you
+                    <span className="font-semibold text-[#263C4D]">
+                      {" "}
+                      always know exactly where your stock is{" "}
+                    </span>
+                    and when it will arrive.
                   </p>
                 </div>
               </div>
@@ -587,25 +518,33 @@ const page = () => {
                 </span>
               </div>
 
-              <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
-                A loyal customer leaves because a medicine is out of stock.
+              <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                Automated Distributor Ordering
               </h3>
 
-              <div className="mt-5">
-                <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
-                  Zero
-                </h4>
+              <div className="mt-2">
+                <div className="flex items-end gap-2">
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
+                    Zero
+                  </h4>
 
-                <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
-                  stockouts on fast-movers
-                </p>
+                  <p className="font-nunito text-[14px] font-medium text-[#717e88]">
+                    manual order errors
+                  </p>
+                </div>
 
-                <p className="mt-3 text-[14px] leading-[1.65] text-[#60727F]">
-                  Auto reorder alerts keep{" "}
+                <p className="font-nunito mt-3 text-[14px] leading-[1.65] text-[#60727F]">
+                  Automated
                   <span className="font-semibold text-[#263C4D]">
-                    every fast mover on your rack
+                    {" "}
+                    pharmacy procurement management generates purchase orders
+                    based on real demand{" "}
                   </span>
-                  , so no one walks to the shop next door.
+                  , removing
+                  <span className="font-semibold text-[#263C4D]">
+                    {" "}
+                    guesswork and reducing costly ordering mistakes.
+                  </span>
                 </p>
               </div>
             </motion.div>
@@ -623,16 +562,7 @@ const page = () => {
                 delay: 0.1,
                 ease: "easeOut",
               }}
-              className="
-          lg:col-span-5
-          rounded-[22px]
-          border border-[#E5EEF2]
-          bg-white
-          p-5
-          shadow-[0_12px_40px_rgba(20,60,80,0.05)]
-          sm:p-6
-          lg:p-7
-        "
+              className=" lg:col-span-5 rounded-[22px] border border-[#E5EEF2] bg-white p-5 shadow-[0_12px_40px_rgba(20,60,80,0.05)] sm:p-6 lg:p-7 "
             >
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#0198ae] text-white shadow-[0_8px_20px_rgba(1,152,174,0.22)]">
                 <Zap size={20} strokeWidth={1.8} />
@@ -646,22 +576,33 @@ const page = () => {
                 </span>
               </div>
 
-              <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
-                Billing crawls and the queue builds up every evening.
+              <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                Faster Warehouse-to-Store Delivery
               </h3>
 
-              <div className="mt-5">
-                <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
-                  40% faster
-                </h4>
+              <div className="mt-2">
+                <div className="flex items-end gap-2">
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
+                    35% faster
+                  </h4>
 
-                <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
-                  checkout at the counter
-                </p>
+                  <p className="font-nunito text-[14px] font-medium text-[#717e88]">
+                    stock replenishment
+                  </p>
+                </div>
 
-                <p className="mt-3 text-[14px] leading-[1.65] text-[#60727F]">
-                  Faster billing and barcode checkout help your team serve more
-                  customers with fewer delays during busy hours.
+                <p className="font-nunito mt-3 text-[14px] leading-[1.65] text-[#60727F]">
+                  Optimized routing and
+                  <span className="font-semibold text-[#263C4D]">
+                    {" "}
+                    centralized dispatch planning
+                  </span>
+                  get medicines from{" "}
+                  <span className="font-semibold text-[#263C4D]">
+                    {" "}
+                    warehouse to store shelves faster, minimizing stockouts
+                  </span>
+                  on fast-moving items.
                 </p>
               </div>
             </motion.div>
@@ -696,27 +637,28 @@ const page = () => {
                     </span>
                   </div>
 
-                  <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
-                    GST month-end never matches your books.
+                  <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                    Connected Vendor Network
                   </h3>
                 </div>
 
                 {/* Right */}
                 <div className="border-t border-[#E4ECEF] pt-6 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-1">
-                  <h4 className="text-[30px] font-semibold leading-none text-[#0198ae]">
-                    Minutes
+                  <h4 className="font-fraunces text-[30px] font-semibold leading-none text-[#0198ae]">
+                    One dashboard
                   </h4>
 
-                  <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
-                    to file — not lost weekends
+                  <p className="font-nunito mt-1 text-[14px] font-medium text-[#8A9AA6]">
+                    Seamless distributor-to-pharmacy sync
                   </p>
 
-                  <p className="mt-3 text-[16px] leading-[1.65] text-[#60727F]">
-                    Every bill posts straight to your{" "}
+                  <p className="font-nunito mt-3 text-[16px] leading-[1.65] text-[#60727F]">
                     <span className="font-semibold text-[#263C4D]">
-                      accounts, and returns build themselves
+                      Direct integration with distributors and supply chain
+                    management software keeps everyone connected
                     </span>
-                    , reconciled, accurate, and ready to file.
+                    , replacing
+                    phone calls and paperwork with real-time updates.{" "}
                   </p>
                 </div>
               </div>
@@ -726,7 +668,8 @@ const page = () => {
       </section>
 
       <AlternatingSection
-        sectionTitle="Everything You Need to Manage Your Projects"
+        sectionTitle="Everything You Need to Manage Your Supply Chain"
+        sectionHighlight={["Manage", "Supply Chain"]}
         sectionDescription="A centralized platform designed to simplify project operations, procurement, inventory, and collaboration."
         items={features}
       />
@@ -742,7 +685,7 @@ const page = () => {
         imageAlt="Real estate ERP support"
         faqs={faqData}
       />
-    </main>
+    </>
   );
 };
 

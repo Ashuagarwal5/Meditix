@@ -19,46 +19,54 @@ import { CiMedicalCross } from "react-icons/ci";
 import { FaHandHoldingMedical } from "react-icons/fa";
 
 // assets
-import aboutWhoWeAre from "@/assets/aboutWhoWeAre.webp";
-import aboutWhoWeAre2 from "@/assets/aboutWhoWeAre2.webp";
-import aboutHero from "../../assets/aboutHero.webp";
+// import aboutWhoWeAre from "@/assets/aboutWhoWeAre.webp";
+// import aboutWhoWeAre2 from "@/assets/aboutWhoWeAre2.webp";
+import aboutWhoWeAre3 from "../../assets/aboutWhoWeAre3.png";
+import aboutOurValues from "../../assets/aboutOurValues.png";
+// import aboutHero from "../../assets/aboutHero.webp";
+import aboutHero2 from "../../assets/aboutHero2.png";
 import aboutSetion from "../../assets/aboutSetion.jpg";
 import homeFAQs from "../../assets/homeFAQs.webp";
+import aboutCR01 from "../../assets/aboutCR01.jpg";
+import aboutCR02 from "../../assets/aboutCR02.jpg";
+import aboutCR03 from "../../assets/aboutCR03.jpg";
+import aboutCR04 from "../../assets/aboutCR04.jpg";
 
 // Component
 import Cta from "../home/components/Cta";
 import FAQSection from "../components/common/FAQSection";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const missionItems = [
   {
     number: "1",
-    title: "Empower Healthcare Providers",
+    title: "Empower Pharmacy Owners",
     description:
-      "Equip clinics, hospitals, diagnostic centers, and pharmacies with advanced tools to manage their operations efficiently and provide top-notch patient care.",
+      "Equip independent pharmacies, chains, and hospital pharmacy units with advanced tools to manage billing, inventory, and staff efficiently and without complexity.",
   },
   {
     number: "2",
-    title: "Improve Patient Experiences",
+    title: "Improve Operational Accuracy",
     description:
-      "Enhance patient satisfaction by simplifying processes and ensuring timely, accurate medical services.",
+      "Reduce billing errors, stock mismatches, and expiry losses by replacing manual processes with automated, real-time systems.",
   },
   {
     number: "3",
-    title: "Ensure Quality and Compliance",
+    title: "Ensure Data Security and Compliance",
     description:
-      "Maintain the highest standards of quality and compliance in all our offerings, ensuring the safety and security of patient data.",
+      "Maintain the highest standards of data protection and regulatory compliance, keeping pharmacy and patient information safe at all times.",
   },
   {
     number: "4",
-    title: "Drive Efficiency",
+    title: "Drive Efficiency Across Operations",
     description:
-      "Streamline administrative and clinical processes to reduce costs and improve operational efficiency for healthcare providers.",
+      "Streamline day-to-day pharmacy workflows from procurement to billing to reduce costs and save valuable staff time.",
   },
   {
     number: "5",
-    title: "Foster Innovation",
+    title: "Foster Continuous Innovation",
     description:
-      "Continuously innovate and integrate new technologies to stay ahead in the healthcare industry.",
+      "Keep evolving our pharmacy software with new features shaped directly by pharmacist and pharmacy-owner feedback.",
   },
 ];
 
@@ -126,42 +134,43 @@ function Connector({ direction }) {
 const cards = [
   {
     id: 1,
-    title: "Clinics",
+    title: "Independent Pharmacy",
     description:
-      "Simplified practice management and patient record systems to ensure efficient operations.",
-    linkText: "Learn more about our Clinic Management System",
-    url: "/clinic-management",
-    image: aboutSetion,
+      "Simple, reliable billing and inventory tools designed to keep single-counter pharmacies running smoothly without added complexity.",
+    linkText: "Learn more about our Independent Pharmacy Solution",
+    url: "/contact",
+    // image: aboutSetion,
+    image: aboutCR01,
     position: "top-left",
   },
   {
     id: 2,
-    title: "Multi-Specialized Hospitals",
+    title: "Pharmacy Chains",
     description:
-      "Comprehensive tools to manage complex workflows, patient care, and administrative tasks.",
-    linkText: "Learn more about our Hospital Management System",
-    url: "/hospital-management",
-    image: aboutSetion,
+      "Centralized control across multiple branches — track stock, compare performance, and manage staff access, all from one dashboard.",
+    linkText: "Learn more about our Multi-Branch Pharmacy Solution",
+    url: "/contact",
+    image: aboutCR02,
     position: "top-right",
   },
   {
     id: 3,
-    title: "Diagnostic Centers",
+    title: "Hospital & Clinic Pharmacies",
     description:
-      "Advanced features for lab management, reporting, and data integration.",
-    linkText: "Learn more about our Laboratory Management System",
-    url: "/laboratory-management",
-    image: aboutSetion,
+      "Advanced tools to manage high transaction volumes, prescription compliance, and coordination between pharmacy and clinical teams.",
+    linkText: "Learn more about our Hospital Pharmacy Solution",
+    url: "/contact",
+    image: aboutCR03,
     position: "bottom-left",
   },
   {
     id: 4,
-    title: "Pharmacies",
+    title: "Diagnostic-Linked Pharmacies",
     description:
-      "Efficient inventory management, billing, and patient record integration.",
-    linkText: "Learn more about our Pharmacy Management System",
-    url: "/pharmacy-management",
-    image: aboutSetion,
+      "Seamless integration between pharmacy billing, patient records, and diagnostic workflows for connected, end-to-end care.",
+    linkText: "Learn more about our Integrated Pharmacy Solution",
+    url: "/contact",
+    image: aboutCR04,
     position: "bottom-right",
   },
 ];
@@ -219,28 +228,28 @@ function HealthcareCard({ card }) {
 
       {/* Mobile teal cutout */}
       <div
-        className={`pointer-events-none absolute z-[1] block h-[125px] w-[125px] rounded-full bg-[#ea6500] transition-colors duration-500 group-hover:bg-[#0198ae] md:hidden ${mobileCutoutPosition[card.position]}`}
+        className={`pointer-events-none absolute z-[1] block h-[125px] w-[125px] rounded-full bg-[#0198ae] transition-colors duration-500 group-hover:bg-[#0198ae] md:hidden ${mobileCutoutPosition[card.position]}`}
       ></div>
 
       {/* Content */}
       <div
         className={`relative z-10 flex min-h-[270px] flex-col items-center justify-center px-6 py-10 text-center sm:min-h-[290px] md:min-h-[300px] md:w-[66%] lg:px-10 ${isRightCard ? "md:ml-auto" : ""}`}
       >
-        <h3 className="mb-3 text-[18px] font-semibold leading-tight text-black transition-colors duration-500 group-hover:text-white sm:text-[20px] lg:text-[23px]">
+        <h3 className="font-fraunces mb-3 text-[18px] font-semibold leading-tight text-black transition-colors duration-500 group-hover:text-white sm:text-[20px] lg:text-[23px]">
           {card.title}
         </h3>
 
-        <p className="mb-5 max-w-[390px] text-[14px] leading-[1.65] text-[#555555] transition-colors duration-500 group-hover:text-white sm:text-[15px] lg:text-[17px]">
+        <p className="font-nunito mb-5 max-w-[390px] text-[14px] leading-[1.65] text-[#555555] transition-colors duration-500 group-hover:text-white sm:text-[15px] lg:text-[17px]">
           {card.description}
         </p>
 
         <a
           href={card.url}
-          className="max-w-[340px] text-[13px] font-medium leading-[1.4] text-black transition-colors duration-500 group-hover:text-white sm:text-[14px] lg:text-[15px]"
+          className="font-nunito max-w-[340px] text-[13px] sm:text-[14px] lg:text-[16px] font-medium leading-[1.4] text-black transition-colors duration-500 group-hover:text-white "
         >
           {card.linkText}
           <span className="ml-1 inline-block transition-transform duration-300 group-hover:translate-x-1">
-            →
+            <FiArrowUpRight size={16} />
           </span>
         </a>
       </div>
@@ -260,15 +269,15 @@ const reveal = {
 const stats = [
   {
     icon: Building2,
-    label: "Over 1,200+ Active Pharmacies",
+    label: "Trusted by Pharmacies",
   },
   {
     icon: Cloud,
-    label: "99.99% Cloud Uptime",
+    label: "99.9% Uptime, Always On",
   },
   {
     icon: Zap,
-    label: "Zero-Downtime Migration",
+    label: "Zero-Downtime Data Migration",
   },
 ];
 
@@ -331,69 +340,76 @@ const OurValues = [
   {
     title: "Compassion",
     description:
-      "We treat every patient with empathy, kindness, and understanding — just like family.",
+      " We understand that behind every prescription is a patient who needs care, not delays. Our software is built to help pharmacy teams serve people faster and more accurately.",
   },
   {
     title: "Integrity",
     description:
-      "We uphold the highest standards of honesty, privacy, and medical ethics in all we do.",
+      "We hold ourselves to the highest standards of data privacy, billing accuracy, and ethical business practices — because pharmacies handle sensitive health and financial information every day.",
   },
   {
     title: "Innovation",
     description:
-      "We embrace technology to deliver smarter, faster, and more convenient healthcare experiences.",
+      "We continuously adopt smarter technology to make pharmacy operations faster, more predictable, and less dependent on manual effort.",
   },
   {
     title: "Accessibility",
     description:
-      "Healthcare should be for everyone. Our platform makes quality care available anytime, anywhere.",
+      "Good pharmacy management shouldn't be limited to large chains. Our platform is built to be accessible and affordable for pharmacies of every size and scale.",
   },
 ];
 
 const faqData = [
   {
     id: 1,
-    question: "What is real estate ERP software?",
+    question:
+      "What makes your pharmacy management software different from others?",
     answer:
-      "Real estate ERP software brings project management, procurement, inventory, accounting, vendor management, and operational data into one centralized system.",
+      "Our pharmacy management software is built directly around real counter-side problems billing delays, stock mismatches, and expiry losses rather than generic features borrowed from unrelated industries.",
   },
   {
     id: 2,
-    question: "Can I manage multiple construction sites?",
+    question: "Who is behind this pharmacy management software?",
     answer:
-      "Yes. You can manage multiple sites and maintain separate inventory, material requests, users, vendors, BOQs, purchase orders, and project information for each location.",
+      "Our team includes former pharmacy staff, software engineers, and support specialists who have worked closely with pharmacists to design a platform that fits how pharmacies actually operate.",
   },
   {
     id: 3,
-    question: "Can site teams request materials?",
+    question:
+      "Is your pharmacy software suitable for small, independent pharmacies?",
     answer:
-      "Yes. Site teams can create material requests by selecting the required material, quantity, project site, description, and supporting images.",
+      "Yes. Our pharmacy management software is built to work for single-counter independent pharmacies as well as large multi-branch chains, without requiring complex setup or technical expertise.",
   },
   {
     id: 4,
-    question: "Can I manage vendors from the platform?",
+    question: "Can your software also support hospital and clinic pharmacies?",
     answer:
-      "Yes. Vendors can be onboarded and managed centrally. You can maintain vendor details, track purchases, manage bids, and generate purchase orders.",
+      "Yes. Our platform includes dedicated tools for hospital and clinic pharmacies, handling higher transaction volumes, prescription compliance, and coordination with clinical teams.",
   },
   {
     id: 5,
-    question: "Does the system support inventory transfers?",
+    question: "How do you ensure the security of pharmacy and patient data?",
     answer:
-      "Yes. Materials can be transferred between different project sites while maintaining records of the source site, destination site, quantities, and transfer status.",
+      "Data protection is a core part of our pharmacy management platform, with built-in security measures, role-based access, and regular backups to keep sensitive information safe.",
   },
   {
     id: 6,
-    question: "Can I generate purchase orders?",
+    question: "How often do you update your pharmacy management software?",
     answer:
-      "Yes. Purchase orders can be generated after bid evaluation and negotiation, allowing your procurement workflow to stay organized and traceable.",
+      "We continuously improve our software based on direct feedback from pharmacists and pharmacy owners using it daily, ensuring updates address real operational needs.",
+  },
+  {
+    id: 7,
+    question: "Do you help pharmacies migrate from their existing systems?",
+    answer:
+      "Yes. Our onboarding team assists with complete data migration from your current registers or software, so you can switch to our pharmacy management software without losing existing records.",
   },
 ];
 
 const page = () => {
   return (
     <div>
-
-      {/* hero */} 
+      {/* hero */}
       <section className=" relative w-full overflow-hidden bg-[linear-gradient(180deg,#F8FAFF_0%,#F1F6FF_100%)] ">
         {/* subtle background glow */}
         <div
@@ -437,45 +453,44 @@ const page = () => {
                 sm:text-[12px]
               "
               >
-                About Meditix • Our Mission
+                ABOUT US • OUR MISSION
               </span>
             </div>
 
             {/* heading */}
             <h1
               className="
+              font-fraunces
               mt-5
-              text-[36px] sm:text-[46px] lg:text-[56px]
+              text-[36px] sm:text-[46px] lg:text-[52px]
               text-[#071426]
               font-semibold
               leading-[1.05]
-              tracking-[-2px] sm:tracking-[-2.5px] lg:tracking-[-3px] 
             "
             >
-              Built by healthcare innovators.
+              Built by Pharmacy Experts.
               <br />
               <span className="text-[#0198ae]">
-                Engineered for the future of pharmacy.
+                Engineered for the Future of Pharmacy Management.
               </span>
             </h1>
 
             {/* description */}
             <p
               className="
+              font-nunito
               mt-3
               max-w-[760px]
               text-[14px] sm:text-[15px] lg:text-[18px]
               leading-[1.65]
               text-[#53677A]
-             
-             
+
             "
             >
-              We started Meditix to replace sluggish legacy software with
-              lightning-fast dispensing,
-              <br className="hidden md:block" />
-              predictive inventory, and real-time clinical clarity for
-              pharmacies of every scale.
+              We built our pharmacy management software to replace slow,
+              outdated systems with fast billing, smart inventory control, and
+              real-time visibility for pharmacies of every size, from
+              single-counter shops to multi-branch chains.
             </p>
 
             {/* stats */}
@@ -522,9 +537,10 @@ const page = () => {
 
                   <span
                     className="
+                    font-fraunces
                     text-[15px]
                     font-semibold
-                    text-[#0198ae] 
+                    text-[#0198ae]
                   "
                   >
                     {label}
@@ -571,7 +587,7 @@ const page = () => {
             "
             >
               <Image
-                src={aboutHero}
+                src={aboutHero2}
                 alt="Meditix pharmacy team working together"
                 fill
                 priority
@@ -640,7 +656,7 @@ const page = () => {
 
                 <span
                   className="
-                  text-[9px]
+                  text-[12px]
                   font-bold
                   uppercase
                   tracking-[0.09em]
@@ -660,19 +676,19 @@ const page = () => {
                 leading-[1.5]
                 tracking-[-0.15px]
                 text-[#22384A]
-                sm:text-[14px]
+                sm:text-[16px]
               "
               >
-                "We built the dispensary software we wished existed when lines
-                were wrapping around our counter."
+                "We built the pharmacy software we wished existed — one that
+                keeps up with the counter, not the other way around."
               </p>
 
               {/* founder */}
               <div className="mt-2 flex items-center gap-2">
                 <span className="h-[6px] w-[6px] rounded-full bg-[#1788DC]" />
 
-                <span className="text-[9px] text-[#647789] sm:text-[10px]">
-                  The Meditix Founding Clinical Team
+                <span className="text-[12px] text-[#647789] sm:text-[14px]">
+                  — Founding Team
                 </span>
               </div>
             </motion.div>
@@ -702,7 +718,7 @@ const page = () => {
                 duration: 0.5,
                 delay: 0.1,
               }}
-              className="text-[32px] lg:text-[42px] text-center lg:text-start font-medium leading-[1.1] tracking-[-0.03em] text-black"
+              className="font-fraunces text-[32px] lg:text-[42px] text-center lg:text-start font-medium leading-[1.1] tracking-[-0.03em] text-[#0198ae]"
             >
               Who We Are
             </motion.h2>
@@ -715,22 +731,22 @@ const page = () => {
                 duration: 0.6,
                 delay: 0.2,
               }}
-              className="flex flex-col  text-center lg:text-start  gap-2 text-[16px] lg:text-[18px] text-gray-500"
+              className="font-nunito flex flex-col  text-center lg:text-start  gap-2 text-[16px] lg:text-[18px] text-gray-500"
             >
               <p>
-                We are a dedicated team of healthcare professionals,
-                technologists, and support staff committed to making quality
-                medical care accessible to everyone. Our mission is to connect
-                patients with trusted doctors through a seamless, secure, and
-                user-friendly telemedicine platform.
+                We are a dedicated team of pharmacists, technologists, and
+                support specialists working together to make pharmacy management
+                simpler, faster, and more reliable. Our mission is to connect
+                pharmacy owners with the tools they need to run their business
+                confidently through a secure, easy-to-use platform built
+                specifically for pharmacy operations.
               </p>
 
               <p>
-                We are a dedicated team of healthcare professionals,
-                technologists, and support staff committed to making quality
-                medical care accessible to everyone. Our mission is to connect
-                patients with trusted doctors through a seamless, secure, and
-                user-friendly telemedicine platform.
+                Every feature we build starts with a real problem faced at the
+                pharmacy counter, from billing delays to expiry losses, and ends
+                with a solution that pharmacy teams can actually use, every
+                single day.
               </p>
             </motion.div>
           </motion.div>
@@ -748,7 +764,7 @@ const page = () => {
             className="relative flex justify-end w-full xl:w-[550px] h-[300px] sm:h-[350px] ms-auto overflow-hidden rounded-[10px]"
           >
             <Image
-              src={aboutWhoWeAre2}
+              src={aboutWhoWeAre3}
               alt="Healthcare professionals"
               fill
               priority
@@ -760,45 +776,42 @@ const page = () => {
       </section>
 
       {/* insights */}
-      <section className="mx-auto container w-full bg-white">
-        <div className="container mx-auto px-4 py-10 sm:px-6 lg:px-10 lg:py-12">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
-            className="
+      <section className="mx-auto container px-4 sm:px-6 lg:px-10 py-6 lg:py-12  ">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          className="
             grid
             grid-cols-1
             gap-4
             sm:grid-cols-2
             lg:grid-cols-4
           "
-          >
-            {insights.map((stat) => {
-              const Icon = stat.icon;
+        >
+          {insights.map((stat) => {
+            const Icon = stat.icon;
 
-              return (
-                <motion.article
-                  key={stat.label}
-                  variants={cardVariants}
-                  whileHover={{
-                    y: -4,
-                  }}
-                  className=" group min-h-[220px] rounded-[10px] border border-[#E4EAF1]
+            return (
+              <motion.article
+                key={stat.label}
+                variants={cardVariants}
+                whileHover={{
+                  y: -4,
+                }}
+                className=" group min-h-[220px] rounded-[10px] border border-[#E4EAF1]
                   bg-white
-                  px-5
-                  py-6
+                  p-5
                   shadow-[0_2px_8px_rgba(22,56,87,0.03)]
                   transition-shadow
                   duration-300
-                  hover:shadow-[0_14px_32px_rgba(22,56,87,0.08)]
-                  sm:px-6
+                  hover:shadow-[0_14px_32px_rgba(22,56,87,0.08)] 
                 "
-                >
-                  {/* ICON */}
-                  <div
-                    className="
+              >
+                {/* ICON */}
+                <div
+                  className="
                     flex
                     h-9
                     w-9
@@ -812,54 +825,28 @@ const page = () => {
                     group-hover:bg-[#0198ae]
                     group-hover:text-white
                   "
-                  >
-                    <Icon size={18} strokeWidth={1.8} />
-                  </div>
+                >
+                  <Icon size={18} strokeWidth={1.8} />
+                </div>
 
-                  {/* VALUE */}
-                  <h3
-                    className="
-                    mt-5
-                    text-[31px]
-                    font-bold
-                    leading-none
-                    tracking-[-1.5px]
-                    text-[#071426]
-                    lg:text-[34px]
-                  "
-                  >
-                    {stat.value}
-                  </h3>
+                {/* VALUE */}
+                <h3 className="font-fraunces mt-5 text-[31px] font-medium leading-none tracking-[-1.5px] text-[#071426] lg:text-[34px] " >
+                  {stat.value}
+                </h3>
 
-                  {/* LABEL */}
-                  <p
-                    className="
-                    mt-2
-                    text-[16px]
-                    font-semibold
-                    text-[#0198ae]
-                  "
-                  >
-                    {stat.label}
-                  </p>
+                {/* LABEL */}
+                <p className="font-nunito mt-2 text-[16px] font-semibold text-[#0198ae] " >
+                  {stat.label}
+                </p>
 
-                  {/* DESCRIPTION */}
-                  <p
-                    className="
-                    mt-1
-                    text-[10px]
-                    leading-[1.55]
-                    text-[#53687B]
-                    sm:text-[15px]
-                  "
-                  >
-                    {stat.description}
-                  </p>
-                </motion.article>
-              );
-            })}
-          </motion.div>
-        </div>
+                {/* DESCRIPTION */}
+                <p className="font-nunito mt-1 text-[10px] leading-[1.55] text-[#53687B] sm:text-[15px] " >
+                  {stat.description}
+                </p>
+              </motion.article>
+            );
+          })}
+        </motion.div>
       </section>
 
       {/* Our Values */}
@@ -877,7 +864,7 @@ const page = () => {
             className="relative w-full xl:w-[550px] h-[300px] sm:h-[420px] overflow-hidden rounded-[10px]"
           >
             <Image
-              src={aboutWhoWeAre}
+              src={aboutOurValues}
               alt="Medical professionals in an operating room"
               fill
               sizes="(max-width: 1024px) 100vw, 550px"
@@ -906,7 +893,7 @@ const page = () => {
                 duration: 0.5,
                 delay: 0.1,
               }}
-              className="text-[32px] lg:text-[42px] text-center lg:text-start font-medium  leading-[1.1] tracking-[-0.03em] text-black lg:text-start"
+              className="font-fraunces text-[32px] lg:text-[42px] text-center lg:text-start font-medium  leading-[1.1] tracking-[-0.03em] text-[#0198ae] lg:text-start"
             >
               Our Values
             </motion.h2>
@@ -925,14 +912,14 @@ const page = () => {
                   className="flex items-start gap-4"
                 >
                   {/* Blue Dot */}
-                  <span className="mt-[6px] h-3.5 w-3.5 shrink-0 rounded-full bg-[#0198ae]" />
+                  <span className="mt-[4px] h-3.5 w-3.5 shrink-0 rounded-full bg-[#0198ae]" />
 
                   <div>
-                    <h3 className="text-[18px] font-semibold leading-tight text-black">
+                    <h3 className="font-fraunces text-[18px] font-semibold leading-tight text-black">
                       {value.title}
                     </h3>
 
-                    <p className="mt-2 text-[18px] leading-[1.4] text-[#353535]">
+                    <p className="font-nunito mt-1 text-[16px] leading-[1.4] text-[#353535]">
                       {value.description}
                     </p>
                   </div>
@@ -949,102 +936,37 @@ const page = () => {
         {/* ================= BACKGROUND DECORATIONS ================= */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           {/* Top Left Soft Blob */}
-          <div
-            className="
-        absolute -left-[120px] top-[40px]
-        h-[330px] w-[330px]
-        rounded-[45%_55%_65%_35%/55%_40%_60%_45%]
-        bg-[#0198ae]/[0.07]
-        blur-[2px]
-      "
-          />
+          <div className=" absolute -left-[120px] top-[40px] h-[330px] w-[330px] rounded-[45%_55%_65%_35%/55%_40%_60%_45%] bg-[#0198ae]/[0.07] blur-[2px] " />
 
           {/* Right Side Large Blob */}
-          <div
-            className="
-        absolute -right-[160px] top-[30%]
-        h-[430px] w-[430px]
-        rounded-[60%_40%_35%_65%/50%_55%_45%_50%]
-        bg-[#0198ae]/[0.06]
-      "
-          />
+          <div className=" absolute -right-[160px] top-[30%] h-[430px] w-[430px] rounded-[60%_40%_35%_65%/50%_55%_45%_50%] bg-[#0198ae]/[0.06] " />
 
           {/* Bottom Center Soft Glow */}
-          <div
-            className="
-        absolute bottom-[-200px] left-[35%]
-        h-[500px] w-[500px]
-        rounded-full
-        bg-[#0198ae]/[0.07]
-        blur-[90px]
-      "
-          />
+          <div className=" absolute bottom-[-200px] left-[35%] h-[500px] w-[500px] rounded-full bg-[#0198ae]/[0.07] blur-[90px] " />
 
           {/* Left Outline Circle */}
-          <div
-            className="
-        absolute left-[5%] top-[40%]
-        h-[150px] w-[150px]
-        rounded-full
-        border border-[#0198ae]/10
-      "
-          />
+          <div className=" absolute left-[5%] top-[40%] h-[150px] w-[150px] rounded-full border border-[#0198ae]/10 " />
 
           {/* Small Circle Inside */}
-          <div
-            className="
-        absolute left-[8%] top-[43%]
-        h-[45px] w-[45px]
-        rounded-full
-        bg-white/40
-      "
-          />
+          <div className=" absolute left-[8%] top-[43%] h-[45px] w-[45px] rounded-full bg-white/40 " />
 
           {/* Right Bottom Decorative Ring */}
-          <div
-            className="
-        absolute bottom-[10%] right-[8%]
-        h-[180px] w-[180px]
-        rounded-full
-        border-[25px] border-white/30
-      "
-          />
+          <div className=" absolute bottom-[10%] right-[8%] h-[180px] w-[180px] rounded-full border-[25px] border-white/30 " />
 
           {/* Small Teal Dot */}
-          <div
-            className="
-        absolute bottom-[24%] right-[15%]
-        h-[12px] w-[12px]
-        rounded-full
-        bg-[#0198ae]/20
-      "
-          />
+          <div className=" absolute bottom-[24%] right-[15%] h-[12px] w-[12px] rounded-full bg-[#0198ae]/20 " />
 
           {/* Small Top Dot */}
-          <div
-            className="
-        absolute left-[27%] top-[13%]
-        h-[9px] w-[9px]
-        rounded-full
-        bg-[#0198ae]/25
-      "
-          />
+          <div className=" absolute left-[27%] top-[13%] h-[9px] w-[9px] rounded-full bg-[#0198ae]/25 " />
 
           {/* Subtle Dot Pattern */}
-          <div
-            className="
-        absolute inset-0
-        opacity-[0.28]
-        [background-image:radial-gradient(circle,rgba(1,152,174,0.18)_1px,transparent_1px)]
-        [background-size:30px_30px]
-        [mask-image:linear-gradient(to_bottom,transparent_5%,black_30%,black_70%,transparent_95%)]
-      "
-          />
+          <div className=" absolute inset-0 opacity-[0.28] [background-image:radial-gradient(circle,rgba(1,152,174,0.18)_1px,transparent_1px)] [background-size:30px_30px] [mask-image:linear-gradient(to_bottom,transparent_5%,black_30%,black_70%,transparent_95%)] " />
         </div>
-        <div className="absolute right-25 top-25">
+
+        <div className="absolute right-7 sm:right-25 top-15 sm:top-20 md:top-25">
           <CiMedicalCross className="text-7xl rotate-12 text-[#0198ae]" />
         </div>
-        <div className="absolute left-45 bottom-140">
+        <div className="absolute left-7 md:left-35 xl:left-30 md:bottom-90 xl:bottom-120">
           {/* <CiMedicalCross className="text-7xl -rotate-12 text-[#0198ae]" /> */}
           <FaHandHoldingMedical className="text-6xl opacity-80 -rotate-12 text-[#0198ae]" />
         </div>
@@ -1058,17 +980,18 @@ const page = () => {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="mx-auto mb-10 max-w-[850px] text-center md:mb-12"
           >
-            <p className="mb-2 text-[13px] font-semibold text-[#0198ae]">
+            <p className="mb-2 text-[14px] font-semibold text-[#0198ae]">
               Driving Excellence
             </p>
 
-            <h2 className="mb-4 text-3xl font-bold leading-tight text-[#111] sm:text-4xl lg:text-[42px]">
+            <h2 className="font-fraunces mb-2 text-3xl font-bold leading-tight text-[#111] sm:text-4xl lg:text-[42px]">
               Our Mission
             </h2>
 
-            <p className="mx-auto max-w-[850px] text-[14px] leading-7 text-[#333] sm:text-[15px]">
-              Our mission is to continuously innovate and enhance our platform
-              to meet the evolving needs of the healthcare industry. We aim to:
+            <p className="font-nunito mx-auto max-w-[850px] text-[14px] leading-7 text-[#333] sm:text-[16px]">
+              Our mission is to continuously innovate and improve our pharmacy
+              management software to meet the evolving needs of pharmacies
+              everywhere. We aim to.
             </p>
           </motion.div>
 
@@ -1099,17 +1022,17 @@ const page = () => {
                             ease: [0.22, 1, 0.36, 1],
                             delay: 0.15,
                           }}
-                          className="absolute left-[10px] top-1/2 flex h-[60px] w-[60px] -translate-y-1/2 items-center justify-center rounded-full bg-[#0198ae] text-[26px] font-semibold text-white"
+                          className="font-fraunces absolute left-[10px] top-1/2 flex h-[60px] w-[60px] -translate-y-1/2 items-center justify-center rounded-full bg-[#0198ae] text-[26px] font-semibold text-white"
                         >
                           {item.number}
                         </motion.div>
 
                         <div className="ml-[120px] w-[390px]">
-                          <h3 className="mb-2 text-[19px] font-bold leading-tight text-[#111] lg:text-[20px]">
+                          <h3 className="font-fraunces mb-2 text-[19px] font-medium leading-tight text-[#111] lg:text-[20px]">
                             {item.title}
                           </h3>
 
-                          <p className="text-[14px] leading-[1.65] text-[#222] lg:text-[15px]">
+                          <p className="font-nunito text-[14px] leading-[1.65] text-gray-500 lg:text-[15px]">
                             {item.description}
                           </p>
                         </div>
@@ -1120,11 +1043,11 @@ const page = () => {
                     {!isLeft && (
                       <>
                         <div className="ml-auto mr-[120px] w-[390px]">
-                          <h3 className="mb-2 text-[19px] font-bold leading-tight text-[#111] lg:text-[20px]">
+                          <h3 className="font-fraunces mb-2 text-[19px] font-medium leading-tight text-[#111] lg:text-[20px]">
                             {item.title}
                           </h3>
 
-                          <p className="text-[14px] leading-[1.65] text-[#222] lg:text-[15px]">
+                          <p className="font-nunito text-[14px] leading-[1.65] text-gray-500 lg:text-[15px]">
                             {item.description}
                           </p>
                         </div>
@@ -1138,7 +1061,7 @@ const page = () => {
                             ease: [0.22, 1, 0.36, 1],
                             delay: 0.15,
                           }}
-                          className="absolute right-[10px] top-1/2 flex h-[60px] w-[60px] -translate-y-1/2 items-center justify-center rounded-full bg-[#0198ae] text-[26px] font-semibold text-white"
+                          className="font-fraunces absolute right-[10px] top-1/2 flex h-[60px] w-[60px] -translate-y-1/2 items-center justify-center rounded-full bg-[#0198ae] text-[26px] font-semibold text-white"
                         >
                           {item.number}
                         </motion.div>

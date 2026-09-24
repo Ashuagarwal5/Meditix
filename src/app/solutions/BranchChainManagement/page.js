@@ -5,117 +5,128 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { AlertTriangle, Package, Zap, ReceiptText, Info } from "lucide-react";
 
+// assets
 import homeHero from "../../../assets/homeHero.webp";
-import AlternatingSection from "../../components/common/AlternatingSection";
+import BranchChainManagementHero from "../../../assets/BranchChainManagementHero.png";
+import BranchChainManagement01 from "../../../assets/BranchChainManagement01.png";
+import BranchChainManagement02 from "../../../assets/BranchChainManagement02.png";
+import BranchChainManagement03 from "../../../assets/BranchChainManagement03.png";
 import aboutWhoWeAre from "../../../assets/aboutWhoWeAre.webp";
+import homeFAQs from "../../../assets/homeFAQs.webp";
+
+// components
+import AlternatingSection from "../../components/common/AlternatingSection";
 import Cta from "@/app/home/components/Cta";
 import FAQSection from "@/app/components/common/FAQSection";
-
-import homeFAQs from "../../../assets/homeFAQs.webp";
+import Link from "next/link";
 
 const features = [
   {
-    id: 1,
-    label: "Inventory Management",
-    title: "Keep Complete Control of Your Inventory",
+    id: 1, 
+    title: "Keep Complete Control of Every Store",
+    highlight: "Every Store",
     description:
-      "Manage materials, track stock levels, and maintain complete visibility across different sites from one centralized platform.",
-    image: aboutWhoWeAre,
+      "Manage stock, staff, billing, and prescriptions across every branch with complete visibility, all from one centralized multi-branch pharmacy management system that keeps your entire chain accurate, organized, and in sync.",
+    image: BranchChainManagement01,
     imageAlt: "Inventory management dashboard",
     bullets: [
-      "Track available and reserved inventory",
-      "Manage stock across multiple project sites",
-      "Transfer materials between different locations",
-      "Maintain accurate inventory records",
-    ],
-    buttonText: "Explore Inventory",
-    buttonLink: "/inventory",
+      "Track inventory and sales across all branches.",
+      "Transfer stock between different store locations.",
+      "Assign roles and access to branch-specific staff.",
+      "Maintain accurate, audit-ready records for every store.",
+    ], 
   },
 
   {
-    id: 2,
-    label: "Procurement",
-    title: "Simplify Your Entire Procurement Process",
+    id: 2, 
+    title: "Simplify Your Entire Multi-Store Operations",
+    highlight: "Multi-Store Operations",
     description:
-      "Move from material requests to purchase orders without relying on spreadsheets, phone calls, or disconnected systems.",
-    image: aboutWhoWeAre,
+      "Move from scattered spreadsheets and separate systems to one connected platform a streamlined multi-branch pharmacy workflow that keeps every store's stock requests, transfers, and orders in one place.",
+    image: BranchChainManagement02,
     imageAlt: "Procurement management system",
     bullets: [
-      "Create and manage material requests",
-      "Generate and compare vendor bids",
-      "Create purchase orders quickly",
-      "Monitor procurement status in real time",
+      "Create and manage stock requests across branches.",
+      "Compare vendor bids for bulk, multi-store orders.",
+      "Create centralized purchase orders quickly.",
+      "Monitor procurement status for every branch in real time.",
     ],
   },
 
   {
-    id: 3,
-    label: "Project Management",
-    title: "Manage Every Project From One Place",
+    id: 3, 
+    title: "Manage Your Entire Pharmacy Chain From One Place",
+    highlight: ["Entire Pharmacy Chain", "One Place"],
     description:
-      "Get a complete view of your projects, materials, teams, and activities while keeping every stakeholder connected.",
-    image: aboutWhoWeAre,
+      "Get a complete, real-time view of prescriptions, inventory, staff, and sales across every branch, all connected through a single dashboard. This is the core of a true multi-branch pharmacy management solution, built to keep growing pharmacy chains consistent and in control.",
+    image: BranchChainManagement03,
     imageAlt: "Project management dashboard",
     bullets: [
-      "Manage multiple construction sites",
-      "Create and maintain project BOQs",
-      "Assign users to specific projects",
-      "Monitor project activities from one dashboard",
-    ],
-    buttonText: "View Projects",
-    buttonLink: "/projects",
+      "Create and maintain branch-wise stock and purchase lists.",
+      "Manage unlimited pharmacy branches from one account.",
+      "Assign roles and access to specific staff per branch.",
+      "Monitor all store activities from one dashboard.",
+    ], 
   },
 ];
 
 const faqData = [
   {
     id: 1,
-    question: "What is real estate ERP software?",
+    question: "What is a multi-branch pharmacy management solution?",
     answer:
-      "Real estate ERP software brings project management, procurement, inventory, accounting, vendor management, and operational data into one centralized system.",
+      "A multi-branch pharmacy management solution is software that lets pharmacy chains manage inventory, billing, staff, and prescriptions across all their store locations from a single, centralized platform.",
   },
   {
     id: 2,
-    question: "Can I manage multiple construction sites?",
+    question:
+      "Can I monitor all my pharmacy branches from one dashboard?",
     answer:
-      "Yes. You can manage multiple sites and maintain separate inventory, material requests, users, vendors, BOQs, purchase orders, and project information for each location.",
+      "Yes, Realitix's multi-store pharmacy dashboard gives you real-time visibility into sales, stock, and staff activity across every branch, without switching between separate systems.",
   },
   {
     id: 3,
-    question: "Can site teams request materials?",
+    question: "How does stock transfer work between different branches?",
     answer:
-      "Yes. Site teams can create material requests by selecting the required material, quantity, project site, description, and supporting images.",
+      "The system enables instant inter-store stock transfers, letting you move medicines from a branch with surplus stock to one running low, in just a few clicks.",
   },
   {
     id: 4,
-    question: "Can I manage vendors from the platform?",
+    question: "Can I assign different access levels to staff at each branch?",
     answer:
-      "Yes. Vendors can be onboarded and managed centrally. You can maintain vendor details, track purchases, manage bids, and generate purchase orders.",
+      "Yes, role-based staff access lets you assign specific permissions to employees at each branch, ensuring every billing, dispensing, or stock action is tracked and accountable.",
   },
   {
     id: 5,
-    question: "Does the system support inventory transfers?",
+    question: "Can I compare performance across different pharmacy branches?",
     answer:
-      "Yes. Materials can be transferred between different project sites while maintaining records of the source site, destination site, quantities, and transfer status.",
+      "Absolutely. Branch-wise performance reports let you compare sales, footfall, and stock turnover in real time, helping you identify top-performing stores and those needing attention.",
   },
   {
     id: 6,
-    question: "Can I generate purchase orders?",
+    question: "Is procurement centralized across all branches?",
     answer:
-      "Yes. Purchase orders can be generated after bid evaluation and negotiation, allowing your procurement workflow to stay organized and traceable.",
+      "Yes, the platform supports centralized multi-branch pharmacy workflow for procurement, letting you create stock requests, compare vendor bids, and generate purchase orders for multiple stores at once.",
+  },
+  {
+    id: 7,
+    question:
+      "How many pharmacy branches can I manage with this system?",
+    answer:
+      "Realitix's multi-branch pharmacy management system scales with your business, supporting unlimited branches under one account with centralized control and branch-level reporting.",
   },
 ];
 
 const page = () => {
   const benefits = [
-    "Real-time business insights",
-    "Easy workflow management",
-    "Simple and intuitive interface",
-    "Built for growing businesses",
+    "Real-time visibility across all branches.",
+    "Easy multi-store pharmacy management.",
+    "Simple and intuitive interface.",
+    "Built for growing pharmacy chains.",
   ];
 
   return (
-    <main className="overflow-hidden bg-white">
+    <>
       {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-white">
         {/* Background glow */}
@@ -148,7 +159,7 @@ const page = () => {
             <div className="relative w-full">
               <div className=" relative overflow-hidden rounded-[20px] border border-[#D8E6E8] bg-white p-2 shadow-[0_25px_70px_rgba(22,65,77,0.12)] sm:rounded-[26px] sm:p-3 ">
                 <Image
-                  src={homeHero}
+                  src={BranchChainManagementHero}
                   alt="Business dashboard"
                   width={900}
                   height={700}
@@ -158,55 +169,6 @@ const page = () => {
                   className=" block h-auto w-full rounded-[15px] object-cover sm:rounded-[20px] "
                 />
               </div>
-
-              {/* Floating card */}
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 15,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.65,
-                  ease: "easeOut",
-                }}
-                className="
-                  absolute
-                  -bottom-6
-                  right-3
-                  hidden
-                  items-center
-                  gap-3
-                  rounded-2xl
-                  border
-                  border-slate-100
-                  bg-white
-                  px-4
-                  py-3
-                  shadow-[0_16px_40px_rgba(20,67,77,0.14)]
-
-                  sm:flex
-                  lg:-right-5
-                "
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0198ae]/10">
-                  <CheckCircle2 className="h-5 w-5 text-[#0198ae]" />
-                </div>
-
-                <div>
-                  <p className="text-[11px] font-medium text-slate-400">
-                    Business Growth
-                  </p>
-
-                  <p className="mt-0.5 text-[13px] font-semibold text-slate-800">
-                    Smarter. Faster. Better.
-                  </p>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
 
@@ -248,7 +210,7 @@ const page = () => {
                 <span className="h-2 w-2 rounded-full bg-[#0198ae]" />
 
                 <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0198ae] sm:text-xs">
-                  Smarter Business Management
+                  SMARTER MULTI-STORE CONTROL
                 </span>
               </div>
             </motion.div>
@@ -269,6 +231,7 @@ const page = () => {
                 ease: "easeOut",
               }}
               className="
+              font-fraunces 
                 mt-5
                 max-w-[650px]
                 text-[38px]
@@ -280,13 +243,14 @@ const page = () => {
                 sm:text-[48px]
 
                 lg:text-[54px]
-                lg:leading-[1.06]
-
-                xl:text-[60px]
+                lg:leading-[1.06] 
               "
             >
-              Run your business with{" "}
-              <span className="text-[#0198ae]">clarity and confidence.</span>
+              Smarter{" "}
+              <span className="text-[#0198ae]">
+                Multi-Branch Pharmacy Management {" "}
+              </span>
+              for Every Store
             </motion.h1>
 
             {/* Description */}
@@ -307,18 +271,19 @@ const page = () => {
               className="
                 mt-5
                 max-w-[590px]
-                text-[15px]
+                text-[16px] sm:text-[18px]
                 leading-7
                 text-slate-600
 
                 sm:mt-6
-                sm:text-[17px]
+               
                 sm:leading-8
               "
             >
-              Simplify everyday operations, monitor performance, and make better
-              decisions with one powerful platform designed to keep your
-              business moving forward.
+              Manage inventory, billing, staff, and prescriptions across all
+              your pharmacy branches from one place with Realitix's multi-branch
+              pharmacy management solution built to keep every store connected,
+              consistent, and under control.
             </motion.p>
 
             {/* Benefits */}
@@ -353,11 +318,11 @@ const page = () => {
                   }}
                   className="flex items-start gap-2.5 text-left"
                 >
-                  <div className="mt-[2px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0198ae]/10">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-[#0198ae]" />
+                  <div className="mt-[2px] flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0198ae]/10">
+                    <CheckCircle2 className="h-4 w-4 text-[#0198ae]" />
                   </div>
 
-                  <span className="text-[14px] font-medium leading-5 text-slate-700">
+                  <span className="font-nunito text-[18px] font-medium leading-5 text-slate-700">
                     {item}
                   </span>
                 </motion.div>
@@ -393,8 +358,8 @@ const page = () => {
                 lg:mt-9
               "
             >
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="
                   group
                   inline-flex
@@ -420,58 +385,8 @@ const page = () => {
               >
                 Get Started
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-
-              <a
-                href="#contact"
-                className="
-                  group
-                  inline-flex
-                  min-h-[48px]
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-xl
-                  border
-                  border-[#0198ae]/30
-                  bg-white
-                  px-6
-                  py-3
-                  text-[14px]
-                  font-semibold
-                  text-[#0198ae]
-                  transition-all
-                  duration-300
-
-                  hover:-translate-y-0.5
-                  hover:border-[#0198ae]
-                  hover:bg-[#0198ae]/5
-                "
-              >
-                Learn More
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              </Link>
             </motion.div>
-
-            {/* Bottom text */}
-            <motion.p
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              transition={{
-                duration: 0.5,
-                delay: 0.85,
-              }}
-              className="mt-5 text-[11px] font-medium text-slate-400 sm:text-xs"
-            >
-              Simple setup <span className="mx-1 text-[#0198ae]/50">•</span>
-              No complex onboarding{" "}
-              <span className="mx-1 text-[#0198ae]/50">•</span>
-              Built to scale
-            </motion.p>
           </div>
         </div>
       </section>
@@ -489,14 +404,23 @@ const page = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="mx-auto mb-10 text-center sm:mb-12"
           >
-            <h2 className="text-[30px] font-medium leading-[1.15] tracking-[-0.03em] text-[#142536] sm:text-[38px] lg:text-[44px]">
-              Why Pharmacy Owners In India Trust{" "}
-              <span className="font-semibold text-[#0198ae]">Meditix</span>
+            <h2 className="font-fraunces text-[30px] font-medium leading-[1.15] tracking-[-0.03em] text-[#142536] sm:text-[38px] lg:text-[44px]">
+              Everything Your
+              <span className="font-semibold text-[#0198ae]">
+                {" "}
+                Pharmacy Chain{" "}
+              </span>
+              Needs for
+              <span className="font-semibold text-[#0198ae]">
+                {" "}
+                Smarter Multi-Store Control{" "}
+              </span>
             </h2>
 
             <p className="mt-3 text-[16px] sm:text-[18px] leading-6 text-[#7A8B99]">
-              See how modern pharmacies overcome everyday operational
-              challenges.
+              From centralized inventory to branch-wise reporting, see how
+              Realitix's multi-branch pharmacy management solution helps you run
+              every store with the same accuracy and control.
             </p>
           </motion.div>
 
@@ -534,27 +458,33 @@ const page = () => {
                     </span>
                   </div>
 
-                  <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
-                    Medicines expire on the shelf before they ever sell.
+                  <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                    Centralized Multi-Store Dashboard
                   </h3>
                 </div>
 
                 {/* Right */}
                 <div className="border-t border-[#E4ECEF] pt-6 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-1">
-                  <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
-                    ₹0
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
+                    One view
                   </h4>
 
-                  <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
-                    lost to expiry
+                  <p className="font-nunito mt-1 text-[14px] font-medium text-[#8A9AA6]">
+                    for all branches
                   </p>
 
-                  <p className="mt-3 text-[16px] leading-[1.65] text-[#60727F]">
-                    Batch-wise alerts warn you weeks ahead, return or{" "}
+                  <p className="font-nunito mt-3 text-[16px] leading-[1.65] text-[#60727F]">
                     <span className="font-semibold text-[#263C4D]">
-                      push that stock in time
+                      {" "}
+                      Monitor sales, stock, and staff activity across every
+                      store from a single
                     </span>
-                    , and keep the cash you used to write off.
+                    ,
+                    <span className="font-semibold text-[#263C4D]">
+                      {" "}
+                      centralized multi-store pharmacy dashboard
+                    </span>
+                    no more switching between systems.
                   </p>
                 </div>
               </div>
@@ -587,25 +517,33 @@ const page = () => {
                 </span>
               </div>
 
-              <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
-                A loyal customer leaves because a medicine is out of stock.
+              <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                Cross-Branch Stock Transfers
               </h3>
 
-              <div className="mt-5">
-                <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
-                  Zero
-                </h4>
+              <div className="mt-2">
+                <div className="flex items-end gap-2">
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
+                    Instant
+                  </h4>
 
-                <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
-                  stockouts on fast-movers
-                </p>
+                  <p className="font-nunito text-[14px] font-medium text-[#717e88]">
+                    inter-store stock transfers
+                  </p>
+                </div>
 
-                <p className="mt-3 text-[14px] leading-[1.65] text-[#60727F]">
-                  Auto reorder alerts keep{" "}
+                <p className="font-nunito mt-3 text-[14px] leading-[1.65] text-[#60727F]">
                   <span className="font-semibold text-[#263C4D]">
-                    every fast mover on your rack
+                    {" "}
+                    Move medicines between branches in a few clicks when one
+                    store runs low
                   </span>
-                  , so no one walks to the shop next door.
+                  and
+                  <span className="font-semibold text-[#263C4D]">
+                    {" "}
+                    another has surplus, keeping every shelf stocked without
+                    delay.
+                  </span>
                 </p>
               </div>
             </motion.div>
@@ -623,16 +561,7 @@ const page = () => {
                 delay: 0.1,
                 ease: "easeOut",
               }}
-              className="
-          lg:col-span-5
-          rounded-[22px]
-          border border-[#E5EEF2]
-          bg-white
-          p-5
-          shadow-[0_12px_40px_rgba(20,60,80,0.05)]
-          sm:p-6
-          lg:p-7
-        "
+              className=" lg:col-span-5 rounded-[22px] border border-[#E5EEF2] bg-white p-5 shadow-[0_12px_40px_rgba(20,60,80,0.05)] sm:p-6 lg:p-7 "
             >
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#0198ae] text-white shadow-[0_8px_20px_rgba(1,152,174,0.22)]">
                 <Zap size={20} strokeWidth={1.8} />
@@ -646,22 +575,29 @@ const page = () => {
                 </span>
               </div>
 
-              <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
-                Billing crawls and the queue builds up every evening.
+              <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                Role-Based Staff Access
               </h3>
 
-              <div className="mt-5">
-                <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
-                  40% faster
-                </h4>
+              <div className="mt-2">
+                <div className="flex items-end gap-2">
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
+                    100%
+                  </h4>
 
-                <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
-                  checkout at the counter
-                </p>
+                  <p className="font-nunito text-[14px] font-medium text-[#717e88]">
+                    accountability across branches
+                  </p>
+                </div>
 
                 <p className="mt-3 text-[14px] leading-[1.65] text-[#60727F]">
-                  Faster billing and barcode checkout help your team serve more
-                  customers with fewer delays during busy hours.
+                  <span className="font-nunito font-semibold text-[#263C4D]">
+                    {" "}
+                    Assign specific roles and permissions to staff at each
+                    branch
+                  </span>
+                  , so every action billing, dispensing, or stock updates is
+                  tracked and traceable.
                 </p>
               </div>
             </motion.div>
@@ -696,27 +632,29 @@ const page = () => {
                     </span>
                   </div>
 
-                  <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
-                    GST month-end never matches your books.
+                  <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                    Branch-Wise Performance Reports
                   </h3>
                 </div>
 
                 {/* Right */}
                 <div className="border-t border-[#E4ECEF] pt-6 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-1">
-                  <h4 className="text-[30px] font-semibold leading-none text-[#0198ae]">
-                    Minutes
+                  <h4 className="font-fraunces text-[30px] font-semibold leading-none text-[#0198ae]">
+                    Real-time
                   </h4>
 
-                  <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
-                    to file — not lost weekends
+                  <p className="font-nunito mt-1 text-[14px] font-medium text-[#8A9AA6]">
+                    sales & performance insights
                   </p>
 
-                  <p className="mt-3 text-[16px] leading-[1.65] text-[#60727F]">
-                    Every bill posts straight to your{" "}
+                  <p className="font-nunito mt-3 text-[16px] leading-[1.65] text-[#60727F]">
+                    {" "}
                     <span className="font-semibold text-[#263C4D]">
-                      accounts, and returns build themselves
+                      Compare sales, footfall, and stock turnover across
+                      branches instantly
                     </span>
-                    , reconciled, accurate, and ready to file.
+                    , helping you identify top performers and stores that need
+                    attention.
                   </p>
                 </div>
               </div>
@@ -726,7 +664,8 @@ const page = () => {
       </section>
 
       <AlternatingSection
-        sectionTitle="Everything You Need to Manage Your Projects"
+        sectionTitle="Everything You Need to Manage Multiple Branches"
+        sectionHighlight="Manage Multiple Branches"
         sectionDescription="A centralized platform designed to simplify project operations, procurement, inventory, and collaboration."
         items={features}
       />
@@ -742,7 +681,7 @@ const page = () => {
         imageAlt="Real estate ERP support"
         faqs={faqData}
       />
-    </main>
+    </>
   );
 };
 

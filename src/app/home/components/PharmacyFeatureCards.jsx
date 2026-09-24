@@ -17,7 +17,7 @@ const features = [
     category: "OPERATIONS",
     title: "Workflow Management",
     description:
-      "Streamline daily operations at the counter with barcode scanning, GST-compliant invoicing, multiple payment options, discounts, and fast, reliable POS - even during peak hours.",
+      "Barcode-based billing, GST-ready invoices, and a fast POS system that cuts queue time and billing errors during rush hours.",
     icon: ClipboardList,
     accent: "blue",
   },
@@ -25,7 +25,7 @@ const features = [
     category: "STOCK CONTROL",
     title: "Inventory Management",
     description:
-      "Track stock levels in real time, monitor expiry dates, and get low-stock alerts. Manage purchases, returns and stock adjustments with ease, so your shelves are always ready.",
+      "Real-time stock, batch, and expiry visibility with automatic low-stock alerts no more shelf-guessing.",
     icon: PackageOpen,
     accent: "cyan",
   },
@@ -33,7 +33,7 @@ const features = [
     category: "PATIENT CARE",
     title: "E-Prescription Management",
     description:
-      "Digitize prescriptions, verify and record them, and maintain a complete history of what was prescribed, by whom, and when - especially important for repeat medications.",
+      "Digital prescriptions with instant history retrieval, replacing paper slips, ideal for chronic and repeat-medication patients.",
     icon: FileHeart,
     accent: "blue",
   },
@@ -41,7 +41,7 @@ const features = [
     category: "PROCUREMENT",
     title: "Supply Chain Management",
     description:
-      "Manage suppliers, track purchase history, and automate refill reminders. Build stronger supplier relationships and ensure a steady supply of medicines with smarter procurement.",
+      "Supplier details, purchase history, and refill schedules in one place, so you never face last-minute shortages.",
     icon: Truck,
     accent: "cyan",
   },
@@ -49,7 +49,7 @@ const features = [
     category: "MULTI-LOCATION",
     title: "Multi-Branch / Chain Management",
     description:
-      "Get centralized control across multiple outlets. View real-time stock, transfer inventory between branches, monitor performance, and manage role-based access for your team.",
+      "Manage multiple outlets from one dashboard: transfer stock, compare performance, and control staff access centrally.",
     icon: Store,
     accent: "blue",
   },
@@ -57,7 +57,7 @@ const features = [
     category: "REVENUE & INSIGHTS",
     title: "Billing & Payment Management",
     description:
-      "Turn every transaction into actionable insights. Analyze sales trends, profit margins, best and slow-moving products, and staff performance - all without manual spreadsheets.",
+      "Turn daily transactions into insights: track revenue, margins, and top movers without touching a spreadsheet.",
     icon: ChartNoAxesColumnIncreasing,
     accent: "cyan",
   },
@@ -122,53 +122,53 @@ export default function PharmacyFeatureCards() {
       <div className="pointer-events-none absolute -right-32 top-10 h-[400px] w-[400px] rounded-full bg-[#dcefff]/50 blur-3xl" />
 
       <div className="container mx-auto w-full  px-4 sm:px-6 lg:px-10">
-				 {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, x: -12 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.7 }}
-            transition={{ duration: 0.45 }}
-            className="mb-4 flex items-center justify-center lg:justify-start gap-3"
+        {/* Eyebrow */}
+        <motion.div
+          initial={{ opacity: 0, x: -12 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.7 }}
+          transition={{ duration: 0.45 }}
+          className="mb-4 flex items-center justify-center lg:justify-start gap-3"
+        >
+          <span className="h-px w-6 bg-[#0198ae]" />
+
+          <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#0198ae]">
+            THE FOUNDATION
+          </span>
+        </motion.div>
+
+        {/* Heading */}
+        <div className="mb-8 grid lg:grid-cols-2 gap-4 lg:gap-8 lg:items-center ">
+          <motion.h2
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="  font-fraunces text-[36px] sm:text-[44px] text-center lg:text-left font-medium leading-[1.08] tracking-[-0.045em] text-[#07101f] "
           >
-            <span className="h-px w-6 bg-[#0198ae]" />
-
-            <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#0198ae]">
-              UNDERSTANDING THE BASICS
+            What Does{" "}
+            <span className="text-[#0198ae]">
+              {" "}
+              Pharmacy Management Software{" "}
             </span>
-          </motion.div>
+            Actually Do?
+          </motion.h2>
 
-          {/* Heading */}
-          <div className="mb-8 grid lg:grid-cols-2 gap-4 lg:gap-8 lg:items-center ">
-            <motion.h2
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-[36px] sm:text-[44px] text-center lg:text-left font-medium leading-[1.08] tracking-[-0.045em] text-[#07101f] "
-            >
-              What is <span className="text-[#0198ae]">Pharmacy</span>
-              <br />
-              Management Software?
-            </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.08 }}
+            // className="w-full h-full flex items-center text-[15px] text-center lg:text-left leading-[1.65] text-[#48546a]  "
+            className="font-nunito text-[15px] sm:text-[18px] leading-normal	 text-[#687E90] text-center lg:text-justify "
+          >
+            From single-counter shops to multi-branch chains and hospital
+            pharmacy units, the need stays the same: error-free billing, tight
+            stock control, and full visibility into performance.
+          </motion.p>
+        </div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.08 }}
-              // className="w-full h-full flex items-center text-[15px] text-center lg:text-left leading-[1.65] text-[#48546a]  "
-              className=" text-[15px] sm:text-[18px] leading-normal	 text-[#687E90] text-center lg:text-justify "
-            >
-              Pharmacy management software is used by a wide range of businesses
-              - from small independent chemist shops to multi-branch retail
-              pharmacy chains, and even in-house pharmacies inside hospitals and
-              clinics. While the scale of usage differs, the underlying need is
-              the same: accurate billing, reliable stock control, and clear
-              visibility into how the business is doing.
-            </motion.p>
-          </div>
-
-					{/* Cards */}
+        {/* Cards */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -226,7 +226,7 @@ export default function PharmacyFeatureCards() {
                   >
                     <Icon
                       strokeWidth={2}
-                      className={`h-8 w-8 ${colors.icon}`}
+                      className={`h-7 w-7 ${colors.icon}`}
                     />
                   </motion.div>
 
@@ -240,11 +240,11 @@ export default function PharmacyFeatureCards() {
 
                 {/* content */}
                 <div className="relative z-10 flex flex-col items-start gap-2 h-full ">
-                  <h3 className=" text-[20px] xl:text-[22px] font-semibold leading-[1.2] tracking-[-0.025em] text-[#07123d] ">
+                  <h3 className=" font-fraunces text-[20px] xl:text-[22px] font-semibold leading-[1.2] tracking-[-0.025em] text-[#07123d] ">
                     {feature.title}
                   </h3>
 
-                  <p className="max-w-[95%] text-[16px] leading-[1.5] text-[#53648b]">
+                  <p className="font-nunito max-w-[95%] text-[16px] leading-[1.5] text-[#53648b] text-justify">
                     {feature.description}
                   </p>
                 </div>

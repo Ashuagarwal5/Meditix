@@ -8,21 +8,22 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 
 // assets
-import homeAbout from "../../../assets/homeAbout.webp"; 
+// import homeAbout from "../../../assets/homeAbout.webp";
+import homeAbout2 from "../../../assets/homeAbout2.png";
 
 const points = [
   // "Trusted by independent pharmacies and growing chains across the country",
-  "97% customer satisfaction rate",
+  "Trusted by pharmacies with consistently high satisfaction scores.",
   // "Dedicated onboarding & support team for every new pharmacy",
-  "Continuous updates based on real user feedback",
-  "Data security and backup built into the platform",
+  "Product updates driven by real pharmacist feedback.",
+  "Built-in data security and automatic backups.",
 ];
 
 const Expertise = () => {
   return (
     <div>
       {/* About Section */}
-      <section className="container mx-auto bg-white px-4 sm:px-6 lg:px-10 py-10  " >
+      <section className="container mx-auto bg-white px-4 sm:px-6 lg:px-10 py-10  ">
         <div className="grid lg:grid-cols-2 items-center gap-12 lg:gap-20">
           {/* Left Image */}
           <motion.div
@@ -34,7 +35,7 @@ const Expertise = () => {
           >
             <div className=" w-full overflow-hidden rounded-3xl">
               <Image
-                src={homeAbout}
+                src={homeAbout2}
                 alt="Medical professional working in a laboratory"
                 width={550}
                 height={750}
@@ -62,32 +63,36 @@ const Expertise = () => {
                 <span className="h-px w-6 bg-[#0198ae]" />
 
                 <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#0198ae]">
-                  WHY PHARMACIES TRUST US
+                  WHY PHARMACIES CHOOSE US
                 </span>
               </motion.div>
 
-              <h3 className="text-[36px] lg:text-[40px] xl:text-[44px] text-center lg:text-left font-medium leading-[1.12] tracking-[-0.035em] text-[#101828]">
-                Built on Real
-                <span className="text-[#0198ae] font-semibold"> Pharmacy </span>
-                Expertise
+              <h3 className=" font-fraunces text-[36px] lg:text-[40px] xl:text-[44px] text-center lg:text-left font-medium leading-[1.12] tracking-[-0.015em] text-[#101828]">
+                Designed With
+                <span className="text-[#0198ae] font-semibold">
+                  {" "}
+                  Pharmacists{" "}
+                </span>
+                , Not Just For Them
               </h3>
             </div>
 
-            <div className="space-y-3 text-[15px] text-center lg:text-justify leading-[1.55] text-[#667085] sm:text-[16px]">
+            <div className="font-nunito space-y-3 text-[15px] text-center lg:text-justify leading-[1.55] text-[#667085] sm:text-[16px]">
               <p>
-                Our platform isn't built in isolation by developers guessing at
-                what a pharmacy needs - it's built alongside pharmacy owners and
-                pharmacists who use it every day at the counter. Every workflow,
-                from billing to expiry tracking, reflects how pharmacies
-                actually operate on the ground.
+                Our pharmacy management platform wasn't built behind a desk by
+                developers guessing at pharmacy needs. It was shaped alongside
+                working pharmacists and pharmacy owners the people who deal with
+                billing queues, expiry deadlines, and supplier calls every
+                single day. That's why every feature reflects a real
+                counter-side problem, not a theoretical one.
               </p>
 
               <p className="hidden xl:block">
-                We understand that switching software touches every part of your
-                business - your staff, your suppliers, your customers, and your
-                daily revenue. That's why we focus not just on features, but on
-                making the transition smooth, supported, and worth it from day
-                one.
+                We also know that switching software isn't a small decision; it
+                touches your staff, your suppliers, your customers, and your
+                daily cash flow. So our focus goes beyond features alone; we
+                make sure the transition itself is smooth, supported, and
+                genuinely worth the switch.
               </p>
             </div>
 
@@ -109,7 +114,7 @@ const Expertise = () => {
                     <Check
                       size={16}
                       strokeWidth={3.5}
-                      className="text-[#268394]  "
+                      className="font-nunito text-[#268394]  "
                     />
                   </span>
 
@@ -121,7 +126,7 @@ const Expertise = () => {
             {/* CTA */}
             <div className="flex ">
               <Link
-                href="/about"
+                href="/contact"
                 // className="flex items-center justify-center text-[17px] text-[#fff] px-4 py-1.5  rounded-[9px] bg-[#0198ae] hover:bg-[#82d5e8]   font-mediumtransition-all duration-300 hover:-translate-y-0.5hover:shadow-lg"
                 className="flex items-center justify-center gap-3 text-[14px] font-semibold text-white py-3 px-5 rounded-lg bg-[#0198ae] hover:-translate-y-0.5 hover:shadow-[0_14px_28px_-12px_rgba(12,121,207,0.8)] transition-all duration-300 "
               >

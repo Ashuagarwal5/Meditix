@@ -5,104 +5,115 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { AlertTriangle, Package, Zap, ReceiptText, Info } from "lucide-react";
 
+// assets
 import homeHero from "../../../assets/homeHero.webp";
-import AlternatingSection from "../../components/common/AlternatingSection";
+import ePresriptionManagementHero from "../../../assets/ePresriptionManagementHero.png";
+import ePresriptionManagement01 from "../../../assets/ePresriptionManagement01.png";
+import ePresriptionManagement02 from "../../../assets/ePresriptionManagement02.png";
+import ePresriptionManagement03 from "../../../assets/ePresriptionManagement03.png";
 import aboutWhoWeAre from "../../../assets/aboutWhoWeAre.webp";
+import homeFAQs from "../../../assets/homeFAQs.webp";
+
+// components
+import AlternatingSection from "../../components/common/AlternatingSection";
 import Cta from "@/app/home/components/Cta";
 import FAQSection from "@/app/components/common/FAQSection";
-
-import homeFAQs from "../../../assets/homeFAQs.webp";
+import Link from "next/link";
 
 const features = [
   {
-    id: 1,
-    label: "Inventory Management",
-    title: "Keep Complete Control of Your Inventory",
+    id: 1, 
+    title: "Keep Complete Control of Every Prescription",
+    highlight: "Every Prescription",
     description:
-      "Manage materials, track stock levels, and maintain complete visibility across different sites from one centralized platform.",
-    image: aboutWhoWeAre,
+      "Receive, verify, and track every prescription with complete visibility across your pharmacy — all from one centralized ePrescription management system that keeps patient data accurate, secure, and always accessible.",
+    image: ePresriptionManagement01,
     imageAlt: "Inventory management dashboard",
     bullets: [
-      "Track available and reserved inventory",
-      "Manage stock across multiple project sites",
-      "Transfer materials between different locations",
-      "Maintain accurate inventory records",
-    ],
-    buttonText: "Explore Inventory",
-    buttonLink: "/inventory",
+      "Receive prescriptions digitally in real time.",
+      "Verify dosage, interactions, and patient history instantly.",
+      "Maintain a complete digital prescription history.",
+      "Get automated refill and renewal reminders",
+    ], 
   },
 
   {
-    id: 2,
-    label: "Procurement",
-    title: "Simplify Your Entire Procurement Process",
+    id: 2, 
+    title: "Simplify Your Entire Prescription Process",
+    highlight: "Prescription Process",
     description:
-      "Move from material requests to purchase orders without relying on spreadsheets, phone calls, or disconnected systems.",
-    image: aboutWhoWeAre,
+      "Move from prescription intake to dispensing in just a few steps no more relying on paper forms, phone confirmations, or disconnected systems. A streamlined e-prescription workflow keeps every request, verification, and dispense in one place.",
+    image: ePresriptionManagement02,
     imageAlt: "Procurement management system",
     bullets: [
-      "Create and manage material requests",
-      "Generate and compare vendor bids",
-      "Create purchase orders quickly",
-      "Monitor procurement status in real time",
+      "Create and manage prescription intake digitally.",
+      "Verify prescriptions against patient medical history.",
+      "Route prescriptions to the right pharmacist quickly.",
+      "Monitor prescription status in real time.",
     ],
   },
 
   {
-    id: 3,
-    label: "Project Management",
-    title: "Manage Every Project From One Place",
+    id: 3, 
+    title: "Manage Every Prescription From One Place",
+    highlight: ["Every Prescription", "One Place"],
     description:
-      "Get a complete view of your projects, materials, teams, and activities while keeping every stakeholder connected.",
-    image: aboutWhoWeAre,
+      "Get a complete, real-time view of prescriptions, patients, and pharmacists while keeping every branch connected. This is the core of a true ePrescription management solution, built to keep multi-store pharmacies accurate and in sync.",
+    image: ePresriptionManagement03,
     imageAlt: "Project management dashboard",
     bullets: [
-      "Manage multiple construction sites",
-      "Create and maintain project BOQs",
-      "Assign users to specific projects",
-      "Monitor project activities from one dashboard",
-    ],
-    buttonText: "View Projects",
-    buttonLink: "/projects",
+      "Manage prescriptions across multiple pharmacy branches.",
+      "Create and maintain digital patient records.",
+      "Assign prescription access to specific pharmacists.",
+      "Monitor prescription activities from one dashboard.",
+    ], 
   },
 ];
 
 const faqData = [
   {
     id: 1,
-    question: "What is real estate ERP software?",
+    question: "What is an ePrescription management solution?",
     answer:
-      "Real estate ERP software brings project management, procurement, inventory, accounting, vendor management, and operational data into one centralized system.",
+      "An ePrescription management solution is software that allows pharmacies to receive, verify, and process digital prescriptions from doctors, eliminating handwritten errors and speeding up the dispensing process.",
   },
   {
     id: 2,
-    question: "Can I manage multiple construction sites?",
+    question:
+      "How does ePrescription software reduce dispensing errors?",
     answer:
-      "Yes. You can manage multiple sites and maintain separate inventory, material requests, users, vendors, BOQs, purchase orders, and project information for each location.",
+      "By replacing illegible handwritten prescriptions with digital records, an ePrescription management system ensures every medicine name, dosage, and instruction is captured accurately, cutting errors to nearly zero.",
   },
   {
     id: 3,
-    question: "Can site teams request materials?",
+    question: "How fast is prescription verification with this system?",
     answer:
-      "Yes. Site teams can create material requests by selecting the required material, quantity, project site, description, and supporting images.",
+      "Automated e-prescription verification cross-checks drug interactions, dosage, and patient history instantly, making verification up to 60% faster than manual checks.",
   },
   {
     id: 4,
-    question: "Can I manage vendors from the platform?",
+    question: "Are digital prescriptions stored securely?",
     answer:
-      "Yes. Vendors can be onboarded and managed centrally. You can maintain vendor details, track purchases, manage bids, and generate purchase orders.",
+      "Yes, every prescription is stored securely in the cloud through digital prescription management, ensuring records are never lost and can be accessed anytime for reference or audits.",
   },
   {
     id: 5,
-    question: "Does the system support inventory transfers?",
+    question: "Can this software connect directly with doctors?",
     answer:
-      "Yes. Materials can be transferred between different project sites while maintaining records of the source site, destination site, quantities, and transfer status.",
+      "Yes, integration with e-prescribing platforms allows doctors and pharmacies to sync in real time, removing the need for manual data entry or phone-based confirmations.",
   },
   {
     id: 6,
-    question: "Can I generate purchase orders?",
+    question: "Can I track a patient's complete prescription history?",
     answer:
-      "Yes. Purchase orders can be generated after bid evaluation and negotiation, allowing your procurement workflow to stay organized and traceable.",
+      "Absolutely. The system maintains a complete, searchable digital history for every patient, making refills, renewals, and prescription tracking simple and accurate.",
+  },
+  {
+    id: 7,
+    question:
+      "Is this ePrescription system suitable for multi-branch pharmacies?",
+    answer:
+      "Yes, the platform supports multi-store ePrescription management, letting you manage prescriptions, assign pharmacist access, and monitor activity across all branches from a single dashboard.",
   },
 ];
 
@@ -115,7 +126,7 @@ const page = () => {
   ];
 
   return (
-    <main className="overflow-hidden bg-white">
+    <>
       {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-white">
         {/* Background glow */}
@@ -148,7 +159,7 @@ const page = () => {
             <div className="relative w-full">
               <div className=" relative overflow-hidden rounded-[20px] border border-[#D8E6E8] bg-white p-2 shadow-[0_25px_70px_rgba(22,65,77,0.12)] sm:rounded-[26px] sm:p-3 ">
                 <Image
-                  src={homeHero}
+                  src={ePresriptionManagementHero}
                   alt="Business dashboard"
                   width={900}
                   height={700}
@@ -158,55 +169,6 @@ const page = () => {
                   className=" block h-auto w-full rounded-[15px] object-cover sm:rounded-[20px] "
                 />
               </div>
-
-              {/* Floating card */}
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 15,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.65,
-                  ease: "easeOut",
-                }}
-                className="
-                  absolute
-                  -bottom-6
-                  right-3
-                  hidden
-                  items-center
-                  gap-3
-                  rounded-2xl
-                  border
-                  border-slate-100
-                  bg-white
-                  px-4
-                  py-3
-                  shadow-[0_16px_40px_rgba(20,67,77,0.14)]
-
-                  sm:flex
-                  lg:-right-5
-                "
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0198ae]/10">
-                  <CheckCircle2 className="h-5 w-5 text-[#0198ae]" />
-                </div>
-
-                <div>
-                  <p className="text-[11px] font-medium text-slate-400">
-                    Business Growth
-                  </p>
-
-                  <p className="mt-0.5 text-[13px] font-semibold text-slate-800">
-                    Smarter. Faster. Better.
-                  </p>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
 
@@ -269,6 +231,7 @@ const page = () => {
                 ease: "easeOut",
               }}
               className="
+              font-fraunces 
                 mt-5
                 max-w-[650px]
                 text-[38px]
@@ -280,9 +243,7 @@ const page = () => {
                 sm:text-[48px]
 
                 lg:text-[54px]
-                lg:leading-[1.06]
-
-                xl:text-[60px]
+                lg:leading-[1.06] 
               "
             >
               Manage prescriptions with{" "}
@@ -305,14 +266,15 @@ const page = () => {
                 ease: "easeOut",
               }}
               className="
+              font-nunito 
                 mt-5
                 max-w-[590px]
-                text-[15px]
+                text-[16px] sm:text-[18px]
                 leading-7
                 text-slate-600
 
                 sm:mt-6
-                sm:text-[17px]
+               
                 sm:leading-8
               "
             >
@@ -353,11 +315,11 @@ const page = () => {
                   }}
                   className="flex items-start gap-2.5 text-left"
                 >
-                  <div className="mt-[2px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0198ae]/10">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-[#0198ae]" />
+                  <div className="mt-[2px] flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0198ae]/10">
+                    <CheckCircle2 className="h-4 w-4 text-[#0198ae]" />
                   </div>
 
-                  <span className="text-[14px] font-medium leading-5 text-slate-700">
+                  <span className="font-nunito text-[18px] font-medium leading-5 text-slate-700">
                     {item}
                   </span>
                 </motion.div>
@@ -393,8 +355,8 @@ const page = () => {
                 lg:mt-9
               "
             >
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="
                   group
                   inline-flex
@@ -420,58 +382,8 @@ const page = () => {
               >
                 Get Started
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-
-              <a
-                href="#contact"
-                className="
-                  group
-                  inline-flex
-                  min-h-[48px]
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-xl
-                  border
-                  border-[#0198ae]/30
-                  bg-white
-                  px-6
-                  py-3
-                  text-[14px]
-                  font-semibold
-                  text-[#0198ae]
-                  transition-all
-                  duration-300
-
-                  hover:-translate-y-0.5
-                  hover:border-[#0198ae]
-                  hover:bg-[#0198ae]/5
-                "
-              >
-                Learn More
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              </Link>
             </motion.div>
-
-            {/* Bottom text */}
-            <motion.p
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              transition={{
-                duration: 0.5,
-                delay: 0.85,
-              }}
-              className="mt-5 text-[11px] font-medium text-slate-400 sm:text-xs"
-            >
-              Simple setup <span className="mx-1 text-[#0198ae]/50">•</span>
-              No complex onboarding{" "}
-              <span className="mx-1 text-[#0198ae]/50">•</span>
-              Built to scale
-            </motion.p>
           </div>
         </div>
       </section>
@@ -489,14 +401,18 @@ const page = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="mx-auto mb-10 text-center sm:mb-12"
           >
-            <h2 className="text-[30px] font-medium leading-[1.15] tracking-[-0.03em] text-[#142536] sm:text-[38px] lg:text-[44px]">
-              Why Pharmacy Owners In India Trust{" "}
-              <span className="font-semibold text-[#0198ae]">Meditix</span>
+            <h2 className="font-fraunces text-[30px] font-medium leading-[1.15] tracking-[-0.03em] text-[#142536] sm:text-[38px] lg:text-[44px]">
+              Everything Your Pharmacy Needs for
+              <span className="font-semibold text-[#0198ae]">
+                {" "}
+                Smarter Prescription Handling{" "}
+              </span>
             </h2>
 
-            <p className="mt-3 text-[16px] sm:text-[18px] leading-6 text-[#7A8B99]">
-              See how modern pharmacies overcome everyday operational
-              challenges.
+            <p className="font-nunito mt-3 text-[16px] sm:text-[18px] leading-6 text-[#7A8B99]">
+              From digital intake to instant verification, see how Meditix's
+              ePrescription management solution helps pharmacies dispense
+              faster, safer, and error-free.
             </p>
           </motion.div>
 
@@ -534,27 +450,34 @@ const page = () => {
                     </span>
                   </div>
 
-                  <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
-                    Medicines expire on the shelf before they ever sell.
+                  <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                    Accurate Digital Prescriptions
                   </h3>
                 </div>
 
                 {/* Right */}
-                <div className="border-t border-[#E4ECEF] pt-6 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-1">
+                <div className="font-fraunces border-t border-[#E4ECEF] pt-6 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-1">
                   <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
-                    ₹0
+                    99.9%
                   </h4>
 
-                  <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
-                    lost to expiry
+                  <p className="font-nunito mt-1 text-[14px] font-medium text-[#8A9AA6]">
+                    dispensing accuracy
                   </p>
 
-                  <p className="mt-3 text-[16px] leading-[1.65] text-[#60727F]">
-                    Batch-wise alerts warn you weeks ahead, return or{" "}
+                  <p className="font-nunito mt-3 text-[16px] leading-[1.65] text-[#60727F]">
+                    Digital prescriptions
                     <span className="font-semibold text-[#263C4D]">
-                      push that stock in time
+                      {" "}
+                      remove guesswork
                     </span>
-                    , and keep the cash you used to write off.
+                    from
+                    <span className="font-semibold text-[#263C4D]">
+                      {" "}
+                      illegible handwriting
+                    </span>
+                    , ensuring every medicine, dose, and instruction is captured
+                    correctly the first time.
                   </p>
                 </div>
               </div>
@@ -587,25 +510,33 @@ const page = () => {
                 </span>
               </div>
 
-              <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
-                A loyal customer leaves because a medicine is out of stock.
+              <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                Instant Prescription Verification
               </h3>
 
-              <div className="mt-5">
-                <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
-                  Zero
-                </h4>
+              <div className="mt-2">
+                <div className="flex items-end gap-2">
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
+                    60%
+                  </h4>
 
-                <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
-                  stockouts on fast-movers
-                </p>
+                  <p className="font-nunito text-[14px] font-medium text-[#717e88]">
+                    faster prescription verification
+                  </p>
+                </div>
 
-                <p className="mt-3 text-[14px] leading-[1.65] text-[#60727F]">
-                  Auto reorder alerts keep{" "}
+                <p className="font-nunito mt-3 text-[14px] leading-[1.65] text-[#60727F]">
+                  Automated
                   <span className="font-semibold text-[#263C4D]">
-                    every fast mover on your rack
+                    {" "}
+                    e-prescription verification cross-checks drug
                   </span>
-                  , so no one walks to the shop next door.
+                  interactions, dosage, and
+                  <span className="font-semibold text-[#263C4D]">
+                    {" "}
+                    patient history instantly
+                  </span>
+                  , cutting wait time at the counter.
                 </p>
               </div>
             </motion.div>
@@ -623,16 +554,7 @@ const page = () => {
                 delay: 0.1,
                 ease: "easeOut",
               }}
-              className="
-          lg:col-span-5
-          rounded-[22px]
-          border border-[#E5EEF2]
-          bg-white
-          p-5
-          shadow-[0_12px_40px_rgba(20,60,80,0.05)]
-          sm:p-6
-          lg:p-7
-        "
+              className=" lg:col-span-5 rounded-[22px] border border-[#E5EEF2] bg-white p-5 shadow-[0_12px_40px_rgba(20,60,80,0.05)] sm:p-6 lg:p-7 "
             >
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#0198ae] text-white shadow-[0_8px_20px_rgba(1,152,174,0.22)]">
                 <Zap size={20} strokeWidth={1.8} />
@@ -646,22 +568,32 @@ const page = () => {
                 </span>
               </div>
 
-              <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
-                Billing crawls and the queue builds up every evening.
+              <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                Secure Digital Records
               </h3>
 
-              <div className="mt-5">
-                <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
-                  40% faster
-                </h4>
+              <div className="mt-2">
+                <div className="flex items-end gap-2">
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
+                    100%
+                  </h4>
 
-                <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
-                  checkout at the counter
-                </p>
+                  <p className="font-nunito text-[14px] font-medium text-[#717e88]">
+                    digital record retention
+                  </p>
+                </div>
 
-                <p className="mt-3 text-[14px] leading-[1.65] text-[#60727F]">
-                  Faster billing and barcode checkout help your team serve more
-                  customers with fewer delays during busy hours.
+                <p className="font-nunito mt-3 text-[14px] leading-[1.65] text-[#60727F]">
+                  Every prescription is stored
+                  <span className="font-semibold text-[#263C4D]">
+                    {" "}
+                    securely in the cloud
+                  </span>
+                  , so nothing is ever lost, and
+                  <span className="font-semibold text-[#263C4D]">
+                    {" "}
+                    past records are always one click away.
+                  </span>
                 </p>
               </div>
             </motion.div>
@@ -696,27 +628,37 @@ const page = () => {
                     </span>
                   </div>
 
-                  <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
-                    GST month-end never matches your books.
+                  <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                    Seamless Doctor Integration
                   </h3>
                 </div>
 
                 {/* Right */}
                 <div className="border-t border-[#E4ECEF] pt-6 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-1">
-                  <h4 className="text-[30px] font-semibold leading-none text-[#0198ae]">
-                    Minutes
+                  <h4 className="font-fraunces text-[30px] font-semibold leading-none text-[#0198ae]">
+                    Seamless
                   </h4>
 
-                  <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
-                    to file — not lost weekends
+                  <p className="font-nunito mt-1 text-[14px] font-medium text-[#8A9AA6]">
+                    doctor-to-pharmacy sync
                   </p>
 
-                  <p className="mt-3 text-[16px] leading-[1.65] text-[#60727F]">
-                    Every bill posts straight to your{" "}
+                  <p className="font-nunito mt-3 text-[16px] leading-[1.65] text-[#60727F]">
+                    Direct integration with
                     <span className="font-semibold text-[#263C4D]">
-                      accounts, and returns build themselves
+                      {" "}
+                      e-prescribing platforms connects doctors{" "}
                     </span>
-                    , reconciled, accurate, and ready to file.
+                    and
+                    <span className="font-semibold text-[#263C4D]">
+                      {" "}
+                      pharmacies in real time, removing manual data entry{" "}
+                    </span>
+                    and
+                    <span className="font-semibold text-[#263C4D]">
+                      {" "}
+                      phone confirmations.{" "}
+                    </span>
                   </p>
                 </div>
               </div>
@@ -726,7 +668,8 @@ const page = () => {
       </section>
 
       <AlternatingSection
-        sectionTitle="Everything You Need to Manage Your Projects"
+        sectionTitle="Everything You Need to Manage Prescriptions"
+        sectionHighlight="Manage Prescriptions"
         sectionDescription="A centralized platform designed to simplify project operations, procurement, inventory, and collaboration."
         items={features}
       />
@@ -742,7 +685,7 @@ const page = () => {
         imageAlt="Real estate ERP support"
         faqs={faqData}
       />
-    </main>
+    </>
   );
 };
 

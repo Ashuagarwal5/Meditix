@@ -4,15 +4,15 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 // assets
-import homeInsights from "../../../assets/homeInsights.jpg";
+import homeInsights01 from "../../../assets/homeInsights01.png";
 
 const benefits = [
-  "Daily sales and margin visibility, updated in real time",
-  "Fast, slow, non-moving stock, flagged automatically",
-  "Branch and staff performance, compared side by side",
-  "Expiry risk alerts before stock becomes a write-off",
-  "Purchase and reorder suggestions based on sales trends",
-  "Smarter purchasing and reorder decisions",
+  "Real-time sales and margin tracking across your pharmacy",
+  "Side-by-side comparison of branch and staff performance",
+  "Smart reorder suggestions based on actual sales trends",
+  "Automatic flagging of fast, slow, and dead stock",
+  "Expiry alerts before products turn into write-offs",
+  "Data-backed purchasing decisions, not guesswork",
 ];
 
 const Benefits = () => {
@@ -30,11 +30,11 @@ const Benefits = () => {
               duration: 0.55,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className=" w-full overflow-hidden rounded-xl bg-[#F8FAFC] p-4 sm:p-5 "
+            className=" w-full overflow-hidden rounded-xl bg-[#F8FAFC] p-4 "
           >
             <div className="overflow-hidden rounded-lg bg-white">
               <Image
-                src={homeInsights}
+                src={homeInsights01}
                 alt="Pharmacy sales and prescription insights dashboard"
                 width={900}
                 height={630}
@@ -79,23 +79,24 @@ const Benefits = () => {
                 <span className="h-px w-6 bg-[#0198ae]" />
 
                 <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#0198ae]">
-                  Live business intelligence
+                  STAY AHEAD, NOT BEHIND
                 </span>
               </motion.div>
 
-              <h3 className="text-[36px] lg:text-[40px] xl:text-[44px] text-center lg:text-left font-medium leading-[1.12] tracking-[-0.035em] text-white">
-                Know what needs attention before it becomes a problem.
+              <h3 className=" font-fraunces text-[36px] lg:text-[40px] xl:text-[44px] text-center lg:text-left font-medium leading-[1.12] tracking-[-0.035em] text-white">
+                Spot the Problem Before It Costs You Money
                 {/* <span className="text-[#0198ae] font-semibold"> Pharmacy </span>
                 Expertise */}
               </h3>
             </div>
 
             {/* Description */}
-            <p className=" mt-2 xl:max-w-[570px] text-[16px] text-[#B6CAD9] ">
-              Most pharmacy owners find out about a problem - a stockout, a
-              slow-moving product, an underperforming branch - only after it's
-              already cost them money. Our analytics dashboard flips that
-              around. See the signals behind your daily operations.
+            <p className=" font-nunito mt-2 xl:max-w-[570px] text-[16px] text-[#B6CAD9] text-justify ">
+              Most pharmacy owners only discover an issue a stockout, a
+              dead-stock product, an underperforming branch after the damage is
+              already done. Our pharmacy analytics dashboard changes that by
+              surfacing warning signs in real time, right when you can still
+              act.
             </p>
 
             {/* Benefits */}
@@ -112,7 +113,7 @@ const Benefits = () => {
                   },
                 },
               }}
-              className=" mt-2 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 "
+              className=" mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 "
             >
               {benefits.map((benefit) => (
                 <motion.li
@@ -138,7 +139,7 @@ const Benefits = () => {
                     ✓
                   </span>
 
-                  <span className="">{benefit}</span>
+                  <span className=" font-nunito">{benefit}</span>
                 </motion.li>
               ))}
             </motion.ul>

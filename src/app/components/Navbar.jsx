@@ -305,7 +305,7 @@ export default function Navbar() {
             aria-label="Open navigation menu"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(true)}
-            className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-700 transition-all hover:border-[#0C79CF]/30 hover:bg-[#0C79CF]/5 hover:text-[#0C79CF] lg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 text-slate-700 transition-all hover:border-[#0C79CF]/30 hover:bg-[#0C79CF]/5 hover:text-[#0C79CF] cursor-pointer lg:hidden"
           >
             <FiMenu size={23} />
           </button>
@@ -337,7 +337,7 @@ export default function Navbar() {
                 duration: 0.25,
               }}
               onClick={closeMobileMenu}
-              className="fixed inset-0 z-[60] bg-slate-950/30 backdrop-blur-[2px] lg:hidden"
+              className="fixed inset-0 z-[60] bg-slate-950/40 backdrop-blur-[4px] lg:hidden"
             />
 
             {/* ================= RIGHT DRAWER ================= */}
@@ -367,14 +367,21 @@ export default function Navbar() {
                   onClick={closeMobileMenu}
                   className="flex items-center gap-2"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0C79CF]">
+                  {/* <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0198ae]">
                     <span className="text-lg font-black text-white">M</span>
                   </div>
 
                   <span className="text-[23px] font-bold tracking-tight text-slate-900">
                     Medi
-                    <span className="text-[#0C79CF]">tix</span>
-                  </span>
+                    <span className="text-[#0198ae]">tix</span>
+                  </span> */}
+                  <Image
+                    src={meditixLogo02}
+                    alt="Meditix Logo"
+                    width={100}
+                    height={100}
+                    className="h-auto w-auto"
+                  />
                 </Link>
 
                 <button
@@ -416,11 +423,12 @@ export default function Navbar() {
                         justify-between rounded-xl
                         px-4 py-3.5
                         text-[15px] font-semibold
-                        transition-all duration-200
+                        transition-all duration-200 
+                        cursor-pointer
                         ${
                           solutionsActive
-                            ? "bg-[#0C79CF]/8 text-[#0C79CF]"
-                            : "text-slate-700 hover:bg-[#0C79CF]/5 hover:text-[#0C79CF]"
+                            ? "bg-[#0C79CF]/8 text-[#0198ae]"
+                            : "text-slate-700 hover:bg-[#0C79CF]/5 hover:text-[#0198ae]"
                         }
                       `}
                     >
@@ -460,7 +468,7 @@ export default function Navbar() {
                           }}
                           className="overflow-hidden"
                         >
-                          <div className="ml-4 mt-2 space-y-1 border-l border-[#0C79CF]/20 pl-3">
+                          <div className="ml-4 mt-2 space-y-1 border-l border-[#E4ECEF] pl-3">
                             {solutions.map((solution) => {
                               const active = pathname === solution.href;
 
@@ -476,8 +484,8 @@ export default function Navbar() {
                                       transition-colors
                                       ${
                                         active
-                                          ? "bg-[#0C79CF]/8 text-[#0C79CF]"
-                                          : "text-slate-600 hover:bg-[#0C79CF]/5 hover:text-[#0C79CF]"
+                                          ? "bg-[#0C79CF]/8 text-[#0198ae]"
+                                          : "text-slate-600 hover:bg-[#0C79CF]/5 hover:text-[#0198ae]"
                                       }
                                     `}
                                 >
@@ -513,7 +521,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={closeMobileMenu}
-                  className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#0C79CF] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_10px_25px_-12px_rgba(12,121,207,0.8)] transition-colors hover:bg-[#096bb8]"
+                  className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#0198ae] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_10px_25px_-12px_rgba(12,121,207,0.8)] transition-colors hover:bg-[#038397] "
                 >
                   Book a Demo
                   <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -580,13 +588,13 @@ function MobileNavItem({ href, label, pathname, onClick }) {
         transition-all duration-200
         ${
           active
-            ? "bg-[#0C79CF]/8 text-[#0C79CF]"
-            : "text-slate-700 hover:bg-[#0C79CF]/5 hover:text-[#0C79CF]"
+            ? "bg-[#0C79CF]/8 text-[#0198ae]"
+            : "text-slate-700 hover:bg-[#0C79CF]/5] hover:text-[#0198ae]"
         }
       `}
     >
       {active && (
-        <span className="absolute bottom-3 left-0 top-3 w-[3px] rounded-r-full bg-[#0C79CF]" />
+        <span className="absolute bottom-3 left-0 top-3 w-[3px] rounded-r-full bg-[#0198ae]" />
       )}
 
       {label}

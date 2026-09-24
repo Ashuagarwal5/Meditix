@@ -8,41 +8,42 @@ import { AlertTriangle, Package, Zap, ReceiptText, Info } from "lucide-react";
 // assets
 import homeHero from "../../../assets/homeHero.webp";
 import aboutWhoWeAre from "../../../assets/aboutWhoWeAre.webp";
+import workflowHero from "../../../assets/workflowHero.png";
+import workflowProjects01 from "../../../assets/workflowProjects01.png";
+import workflowProjects02 from "../../../assets/workflowProjects02.png";
+import workflowProjects03 from "../../../assets/workflowProjects03.png";
 import homeFAQs from "../../../assets/homeFAQs.webp";
 
 // components
 import AlternatingSection from "../../components/common/AlternatingSection";
 import Cta from "@/app/home/components/Cta";
 import FAQSection from "@/app/components/common/FAQSection";
+import Link from "next/link";
 
 const features = [
   {
-    id: 1,
-    label: "Inventory Management",
+    id: 1, 
     title: "Keep Complete Control of Your Inventory",
     highlight: "Inventory",
     description:
       "Manage stock, track batch numbers and expiry dates, and maintain complete visibility across every shelf and branch of your pharmacy, all from one centralized pharmacy inventory management system that keeps your data accurate, organized, and always up to date.",
-    image: aboutWhoWeAre,
+    image: workflowProjects01,
     imageAlt: "Inventory management dashboard",
     bullets: [
       "Track available and reserved stock",
       "Manage inventory across multiple store branches",
       "Transfer stock between different locations",
       "Maintain accurate, audit-ready inventory records",
-    ],
-    buttonText: "Explore Inventory",
-    buttonLink: "/inventory",
+    ], 
   },
 
   {
-    id: 2,
-    label: "Procurement",
+    id: 2, 
     title: "Simplify Your Entire Procurement Process",
     highlight: "Procurement Process",
     description:
       "Move from stock requests to purchase orders in just a few clicks no more relying on scattered spreadsheets, endless phone calls to distributors, or disconnected systems that slow your team down. A streamlined pharmacy procurement process keeps every request, bid, and order in one place.",
-    image: aboutWhoWeAre,
+    image: workflowProjects02,
     imageAlt: "Procurement management system",
     bullets: [
       "Create and manage stock/material requests",
@@ -53,22 +54,19 @@ const features = [
   },
 
   {
-    id: 3,
-    label: "Project Management",
+    id: 3, 
     title: "Manage Every Store From One Place",
     highlight: "Every Store",
     description:
       "Get a complete, real-time view of your prescriptions, inventory, staff, and daily activities across every branch, all connected through a single dashboard. This is the true core of a modern pharmacy workflow management solution, built to keep multi-store pharmacies running smoothly and staying in sync.",
-    image: aboutWhoWeAre,
+    image: workflowProjects03,
     imageAlt: "Project management dashboard",
     bullets: [
       "Manage multiple pharmacy branches",
       "Create and maintain stock/purchase lists",
       "Assign roles and access to specific staff",
       "Monitor store activities from one dashboard",
-    ],
-    buttonText: "View Projects",
-    buttonLink: "/projects",
+    ], 
   },
 ];
 
@@ -115,13 +113,7 @@ const faqData = [
   },
 ];
 
-const page = () => {
-  // const benefits = [
-  //   "Real-time business insights",
-  //   "Easy workflow management",
-  //   "Simple and intuitive interface",
-  //   "Built for growing businesses",
-  // ];
+const page = () => { 
   const benefits = [
     "Real-time prescription tracking",
     "Easy pharmacy workflow management",
@@ -163,8 +155,8 @@ const page = () => {
             <div className="relative w-full">
               <div className=" relative overflow-hidden rounded-[20px] border border-[#D8E6E8] bg-white p-2 shadow-[0_25px_70px_rgba(22,65,77,0.12)] sm:rounded-[26px] sm:p-3 ">
                 <Image
-                  src={homeHero}
-                  alt="Business dashboard"
+                  src={workflowHero}
+                  alt="Workflow Management Hero"
                   width={900}
                   height={700}
                   priority
@@ -284,6 +276,7 @@ const page = () => {
                 ease: "easeOut",
               }}
               className="
+               font-fraunces
                 mt-5
                 max-w-[650px]
                 text-[38px]
@@ -320,6 +313,7 @@ const page = () => {
                 ease: "easeOut",
               }}
               className="
+              font-nunito
                 mt-5
                 max-w-[590px]
                 text-[16px] sm:text-[18px]
@@ -368,11 +362,11 @@ const page = () => {
                   }}
                   className="flex items-start gap-2.5 text-left"
                 >
-                  <div className="mt-[2px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0198ae]/10">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-[#0198ae]" />
+                  <div className="mt-[2px] flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0198ae]/10">
+                    <CheckCircle2 className="h-4 w-4 text-[#0198ae]" />
                   </div>
 
-                  <span className="text-[18px] font-medium leading-5 text-slate-700">
+                  <span className="font-nunito text-[18px] font-medium leading-5 text-slate-700">
                     {item}
                   </span>
                 </motion.div>
@@ -408,8 +402,8 @@ const page = () => {
                 lg:mt-9
               "
             >
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="
                   group
                   inline-flex
@@ -435,7 +429,7 @@ const page = () => {
               >
                 Get Started
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a> 
+              </Link> 
             </motion.div>
  
           </div>
@@ -455,12 +449,12 @@ const page = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="mx-auto mb-10 text-center sm:mb-12"
           >
-            <h2 className="text-[30px] font-medium leading-[1.15] tracking-[-0.03em] text-[#142536] sm:text-[38px] lg:text-[44px]">
+            <h2 className="font-fraunces text-[30px] font-medium leading-[1.15] tracking-[-0.03em] text-[#142536] sm:text-[38px] lg:text-[44px]">
               Why Pharmacy Owners In India Trust{" "}
               <span className="font-semibold text-[#0198ae]">Meditix</span>
             </h2>
 
-            <p className="mt-3 text-[16px] sm:text-[18px] leading-6 text-[#7A8B99]">
+            <p className="font-nunito mt-3 text-[16px] sm:text-[18px] leading-6 text-[#7A8B99]">
               See how modern pharmacies overcome everyday operational challenges
               with the right pharmacy management software.
             </p>
@@ -474,9 +468,7 @@ const page = () => {
     ====================================================== */}
 
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-6">
-            {/* =====================================================
-          CARD 1 - LONG
-      ====================================================== */}
+            {/* CARD 1 - LONG */}
 
             <motion.div
               initial={{ opacity: 0, y: 25 }}
@@ -500,22 +492,22 @@ const page = () => {
                     </span>
                   </div>
 
-                  <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                  <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
                     Medicines expire on the shelf before they ever sell.
                   </h3>
                 </div>
 
                 {/* Right */}
                 <div className="border-t border-[#E4ECEF] pt-6 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-1">
-                  <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
                     ₹0
                   </h4>
 
-                  <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
+                  <p className="font-nunito mt-1 text-[14px] font-medium text-[#8A9AA6]">
                     lost to expiry
                   </p>
 
-                  <p className="mt-3 text-[16px] leading-[1.65] text-[#60727F]">
+                  <p className="font-nunito mt-3 text-[16px] leading-[1.65] text-[#60727F]">
                     Batch-wise alerts warn you weeks ahead so you can
                     <span className="font-semibold text-[#263C4D]">
                      {" "} return or push stock in time
@@ -526,9 +518,7 @@ const page = () => {
               </div>
             </motion.div>
 
-            {/* =====================================================
-          CARD 2 - SHORT
-      ====================================================== */}
+            {/* CARD 2 - SHORT */}
 
             <motion.div
               initial={{ opacity: 0, y: 25 }}
@@ -553,22 +543,22 @@ const page = () => {
                 </span>
               </div>
 
-              <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+              <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
                 A loyal customer leaves because a medicine is out of stock.
               </h3>
 
               <div className="mt-2">
                 <div className="flex items-end gap-2">
-                  <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
                     Zero
                   </h4>
 
-                  <p className="text-[14px] font-medium text-[#717e88]">
+                  <p className="font-nunito text-[14px] font-medium text-[#717e88]">
                     stockouts on fast-movers
                   </p>
                 </div>
 
-                <p className="mt-3 text-[14px] leading-[1.65] text-[#60727F]">
+                <p className="font-nunito mt-3 text-[14px] leading-[1.65] text-[#60727F]">
                   Auto-reorder alerts, powered by
                   <span className="font-semibold text-[#263C4D]">
                   {" "}  smart pharmacy inventory management
@@ -578,9 +568,7 @@ const page = () => {
               </div>
             </motion.div>
 
-            {/* =====================================================
-          CARD 3 - SHORT
-      ====================================================== */}
+            {/* CARD 3 - SHORT */}
 
             <motion.div
               initial={{ opacity: 0, y: 25 }}
@@ -591,16 +579,7 @@ const page = () => {
                 delay: 0.1,
                 ease: "easeOut",
               }}
-              className="
-          lg:col-span-5
-          rounded-[22px]
-          border border-[#E5EEF2]
-          bg-white
-          p-5
-          shadow-[0_12px_40px_rgba(20,60,80,0.05)]
-          sm:p-6
-          lg:p-7
-        "
+              className=" lg:col-span-5 rounded-[22px] border border-[#E5EEF2] bg-white p-5 shadow-[0_12px_40px_rgba(20,60,80,0.05)] sm:p-6 lg:p-7 "
             >
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-[#0198ae] text-white shadow-[0_8px_20px_rgba(1,152,174,0.22)]">
                 <Zap size={20} strokeWidth={1.8} />
@@ -614,22 +593,22 @@ const page = () => {
                 </span>
               </div>
 
-              <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+              <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
                 Billing crawls and the queue builds up every evening.
               </h3>
 
               <div className="mt-2">
                 <div className="flex items-end gap-2">
-                  <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
                     40% faster
                   </h4>
 
-                  <p className="text-[14px] font-medium text-[#717e88]">
+                  <p className="font-nunito text-[14px] font-medium text-[#717e88]">
                     checkout at the counter
                   </p>
                 </div>
 
-                <p className="mt-3 text-[14px] leading-[1.65] text-[#60727F]">
+                <p className="font-nunito mt-3 text-[14px] leading-[1.65] text-[#60727F]">
                   Faster billing and barcode-based pharmacy queue management
                   help your team serve more customers with fewer delays during
                   rush hours.
@@ -637,9 +616,7 @@ const page = () => {
               </div>
             </motion.div>
 
-            {/* =====================================================
-          CARD 4 - LONG
-      ====================================================== */}
+            {/* CARD 4 - LONG */}
 
             <motion.div
               initial={{ opacity: 0, y: 25 }}
@@ -667,22 +644,22 @@ const page = () => {
                     </span>
                   </div>
 
-                  <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                  <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
                     Prescription errors slip through during busy hours.
                   </h3>
                 </div>
 
                 {/* Right */}
                 <div className="border-t border-[#E4ECEF] pt-6 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-1">
-                  <h4 className="text-[30px] font-semibold leading-none text-[#0198ae]">
+                  <h4 className="font-fraunces text-[30px] font-semibold leading-none text-[#0198ae]">
                     99.9%
                   </h4>
 
-                  <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
+                  <p className="font-nunito mt-1 text-[14px] font-medium text-[#8A9AA6]">
                     accuracy on every fill
                   </p>
 
-                  <p className="mt-3 text-[16px] leading-[1.65] text-[#60727F]">
+                  <p className="font-nunito mt-3 text-[16px] leading-[1.65] text-[#60727F]">
                     Automated prescription workflow verification flags{" "}
                     <span className="font-semibold text-[#263C4D]">
                       interactions and mismatches before dispensing
@@ -698,6 +675,7 @@ const page = () => {
 
       <AlternatingSection
         sectionTitle="Everything You Need to Manage Your Projects"
+        sectionHighlight="Manage Your Projects" 
         sectionDescription="A centralized platform designed to simplify project operations, procurement, inventory, and collaboration."
         items={features}
       />

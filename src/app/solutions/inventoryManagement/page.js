@@ -6,7 +6,11 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { AlertTriangle, Package, Zap, ReceiptText, Info } from "lucide-react";
 
 // assets
-import homeHero from "../../../assets/homeHero.webp";
+// import homeHero from "../../../assets/homeHero.webp";
+import InventoryManagementHero from "../../../assets/InventoryManagementHero.png";
+import Inventory01 from "../../../assets/Inventory01.png";
+import Inventory02 from "../../../assets/Inventory02.png";
+import Inventory03 from "../../../assets/Inventory03.png";
 import aboutWhoWeAre from "../../../assets/aboutWhoWeAre.webp";
 import homeFAQs from "../../../assets/homeFAQs.webp";
 
@@ -14,35 +18,32 @@ import homeFAQs from "../../../assets/homeFAQs.webp";
 import AlternatingSection from "../../components/common/AlternatingSection";
 import Cta from "@/app/home/components/Cta";
 import FAQSection from "@/app/components/common/FAQSection";
+import Link from "next/link";
 
 const features = [
   {
-    id: 1,
-    label: "Inventory Management",
+    id: 1, 
     title: "Keep Complete Control of Your Stock",
     highlight: "Your Stock",
     description:
       "Track batch numbers, expiry dates, and stock levels with complete visibility across every shelf and branch, all from one centralized pharmacy inventory management system that keeps your data accurate, organized, and always audit-ready.",
-    image: aboutWhoWeAre,
+    image: Inventory01,
     imageAlt: "Inventory management dashboard",
     bullets: [
       "Track available and reserved stock",
       "Manage inventory across multiple store branches.",
       "Transfer stock between different locations.",
       "Get automated low-stock and expiry alerts",
-    ],
-    buttonText: "Explore Inventory",
-    buttonLink: "/inventory",
+    ], 
   },
 
   {
-    id: 2,
-    label: "Procurement",
+    id: 2, 
     title: "Simplify Your Entire Stock Procurement",
     highlight: "Stock Procurement",
     description:
       "Move from stock requests to purchase orders in just a few clicks no more relying on spreadsheets, phone calls to distributors, or disconnected systems. A streamlined pharmacy stock procurement process keeps every request, bid, and order in one place.",
-    image: aboutWhoWeAre,
+    image: Inventory02,
     imageAlt: "Procurement management system",
     bullets: [
       "Create and manage stock/material requests.",
@@ -53,23 +54,19 @@ const features = [
   },
 
   {
-    id: 3,
-    label: "Project Management",
+    id: 3, 
     title: "Manage Every Store's Inventory From One Place",
-    highlight: "Every Store",
+    highlight: "Every Store's",
     description:
       " Get a complete, real-time view of stock, batches, and expiry across every branch, all connected through a single dashboard. This is the core of a true pharmacy inventory management solution, built to keep multi-store pharmacies stocked and in sync.",
-    image: aboutWhoWeAre,
+    image: Inventory03,
     imageAlt: "Project management dashboard",
     bullets: [
       "Manage inventory across multiple pharmacy branches.",
       "Create and maintain stock/purchase lists.",
       "Assign inventory access roles to specific staff.",
       "Monitor stock activities from one dashboard.",
-
-    ],
-    buttonText: "View Projects",
-    buttonLink: "/projects",
+    ], 
   },
 ];
 
@@ -89,8 +86,7 @@ const faqData = [
   },
   {
     id: 3,
-    question:
-      "Can I manage stock across multiple pharmacy branches?",
+    question: "Can I manage stock across multiple pharmacy branches?",
     answer:
       "Yes. With built-in multi-store inventory management, you can view, transfer, and monitor stock across all your pharmacy locations from a single, centralized dashboard.",
   },
@@ -102,15 +98,13 @@ const faqData = [
   },
   {
     id: 5,
-    question:
-      "How does barcode scanning help with inventory accuracy?",
+    question: "How does barcode scanning help with inventory accuracy?",
     answer:
       "Barcode-based scanning replaces manual counting, giving you instant, accurate stock levels and cutting audit time by up to 90% a core feature of modern inventory management for pharmacies.",
   },
   {
     id: 6,
-    question:
-      "Can I track reserved vs. available stock separately?",
+    question: "Can I track reserved vs. available stock separately?",
     answer:
       "Yes, the system clearly separates available and reserved stock, so you always know exactly what can be sold versus what's already committed to orders or transfers.",
   },
@@ -165,7 +159,7 @@ const page = () => {
             <div className="relative w-full">
               <div className=" relative overflow-hidden rounded-[20px] border border-[#D8E6E8] bg-white p-2 shadow-[0_25px_70px_rgba(22,65,77,0.12)] sm:rounded-[26px] sm:p-3 ">
                 <Image
-                  src={homeHero}
+                  src={InventoryManagementHero}
                   alt="Business dashboard"
                   width={900}
                   height={700}
@@ -174,56 +168,7 @@ const page = () => {
                   sizes="(max-width: 1024px) 92vw, 600px"
                   className=" block h-auto w-full rounded-[15px] object-cover sm:rounded-[20px] "
                 />
-              </div>
-
-              {/* Floating card */}
-              {/* <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 15,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.65,
-                  ease: "easeOut",
-                }}
-                className="
-                  absolute
-                  -bottom-6
-                  right-3
-                  hidden
-                  items-center
-                  gap-3
-                  rounded-2xl
-                  border
-                  border-slate-100
-                  bg-white
-                  px-4
-                  py-3
-                  shadow-[0_16px_40px_rgba(20,67,77,0.14)]
-
-                  sm:flex
-                  lg:-right-5
-                "
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0198ae]/10">
-                  <CheckCircle2 className="h-5 w-5 text-[#0198ae]" />
-                </div>
-
-                <div>
-                  <p className="text-[11px] font-medium text-slate-400">
-                    Business Growth
-                  </p>
-
-                  <p className="mt-0.5 text-[13px] font-semibold text-slate-800">
-                    Smarter. Faster. Better.
-                  </p>
-                </div>
-              </motion.div> */}
+              </div> 
             </div>
           </motion.div>
 
@@ -286,6 +231,7 @@ const page = () => {
                 ease: "easeOut",
               }}
               className="
+                font-fraunces
                 mt-5
                 max-w-[650px]
                 text-[38px]
@@ -298,8 +244,7 @@ const page = () => {
 
                 lg:text-[54px]
                 lg:leading-[1.06]
-
-                xl:text-[60px]
+ 
               "
             >
               Manage your stock with{" "}
@@ -322,6 +267,7 @@ const page = () => {
                 ease: "easeOut",
               }}
               className="
+              font-nunito
                 mt-5
                 max-w-[590px]
                 text-[16px] sm:text-[18px]
@@ -370,11 +316,11 @@ const page = () => {
                   }}
                   className="flex items-start gap-2.5 text-left"
                 >
-                  <div className="mt-[2px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0198ae]/10">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-[#0198ae]" />
+                  <div className="mt-[2px] flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0198ae]/10">
+                    <CheckCircle2 className="h-4 w-4 text-[#0198ae]" />
                   </div>
 
-                  <span className="text-[18px] font-medium leading-5 text-slate-700">
+                  <span className="font-nunito text-[18px] font-medium leading-5 text-slate-700">
                     {item}
                   </span>
                 </motion.div>
@@ -410,8 +356,8 @@ const page = () => {
                 lg:mt-9
               "
             >
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="
                   group
                   inline-flex
@@ -437,7 +383,7 @@ const page = () => {
               >
                 Get Started
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -456,14 +402,14 @@ const page = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="mx-auto mb-10 text-center sm:mb-12"
           >
-            <h2 className="text-[30px] font-medium leading-[1.15] tracking-[-0.03em] text-[#142536] sm:text-[38px] lg:text-[44px]">
+            <h2 className="font-fraunces text-[30px] font-medium leading-[1.15] tracking-[-0.03em] text-[#142536] sm:text-[38px] lg:text-[44px]">
               Why Pharmacy Owners In India Trust
               <span className="font-semibold text-[#0198ae]"> Meditix </span>
               for
               <span className="font-semibold text-[#0198ae]"> Inventory </span>
             </h2>
 
-            <p className="mt-3 text-[16px] sm:text-[18px] leading-6 text-[#7A8B99]">
+            <p className="font-nunito mt-3 text-[16px] sm:text-[18px] leading-6 text-[#7A8B99]">
               See how a smart pharmacy inventory management system helps
               pharmacies stay stocked, reduce waste, and save time every single
               day.
@@ -504,22 +450,22 @@ const page = () => {
                     </span>
                   </div>
 
-                  <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                  <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
                     Medicines expire on the shelf before they ever sell.
                   </h3>
                 </div>
 
                 {/* Right */}
                 <div className="border-t border-[#E4ECEF] pt-6 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-1">
-                  <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
                     ₹0
                   </h4>
 
-                  <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
+                  <p className="font-nunito mt-1 text-[14px] font-medium text-[#8A9AA6]">
                     lost to expiry
                   </p>
 
-                  <p className="mt-3 text-[16px] leading-[1.65] text-[#60727F]">
+                  <p className="font-nunito mt-3 text-[16px] leading-[1.65] text-[#60727F]">
                     Batch-wise alerts warn you weeks ahead, so you can
                     <span className="font-semibold text-[#263C4D]">
                       {" "}
@@ -559,22 +505,22 @@ const page = () => {
                 </span>
               </div>
 
-              <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+              <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
                 Fast-moving medicines run out without warning.
               </h3>
 
               <div className="mt-2">
                 <div className="flex items-end gap-2">
-                  <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
                     Zero
                   </h4>
 
-                  <p className="text-[14px] font-medium text-[#717e88]">
+                  <p className="font-nunito text-[14px] font-medium text-[#717e88]">
                     stockouts on fast-movers
                   </p>
                 </div>
 
-                <p className="mt-3 text-[14px] leading-[1.65] text-[#60727F]">
+                <p className="font-nunito mt-3 text-[14px] leading-[1.65] text-[#60727F]">
                   Auto-reorder alerts keep every
                   <span className="font-semibold text-[#263C4D]">
                     {" "}
@@ -625,22 +571,22 @@ const page = () => {
                 </span>
               </div>
 
-              <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+              <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
                 Manual stock counting eats up hours every week.
               </h3>
 
               <div className="mt-2">
                 <div className="flex items-end gap-2">
-                  <h4 className="text-[32px] font-semibold leading-none text-[#0198ae]">
+                  <h4 className="font-fraunces text-[32px] font-semibold leading-none text-[#0198ae]">
                     90% less
                   </h4>
 
-                  <p className="text-[14px] font-medium text-[#717e88]">
+                  <p className="font-nunito text-[14px] font-medium text-[#717e88]">
                     manual counting time
                   </p>
                 </div>
 
-                <p className="mt-3 text-[14px] leading-[1.65] text-[#60727F]">
+                <p className="font-nunito mt-3 text-[14px] leading-[1.65] text-[#60727F]">
                   Barcode-based scanning and real-time updates
                   <span className="font-semibold text-[#263C4D]">
                     {" "}
@@ -681,22 +627,22 @@ const page = () => {
                     </span>
                   </div>
 
-                  <h3 className="mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
+                <h3 className="font-fraunces mt-3 text-[19px] font-semibold leading-[1.3] text-[#172838] sm:text-[20px]">
                     No visibility into which branch has what stock.
                   </h3>
                 </div>
 
                 {/* Right */}
                 <div className="border-t border-[#E4ECEF] pt-6 sm:border-l sm:border-t-0 sm:pl-7 sm:pt-1">
-                  <h4 className="text-[30px] font-semibold leading-none text-[#0198ae]">
+                  <h4 className="font-fraunces text-[30px] font-semibold leading-none text-[#0198ae]">
                     One dashboard
                   </h4>
 
-                  <p className="mt-1 text-[14px] font-medium text-[#8A9AA6]">
+                  <p className="font-nunito mt-1 text-[14px] font-medium text-[#8A9AA6]">
                     for all branches
                   </p>
 
-                  <p className="mt-3 text-[16px] leading-[1.65] text-[#60727F]">
+                  <p className="font-nunito mt-3 text-[16px] leading-[1.65] text-[#60727F]">
                     Complete, centralized multi-store{" "}
                     <span className="font-semibold text-[#263C4D]">
                       inventory management shows exactly what's available,
@@ -713,6 +659,7 @@ const page = () => {
 
       <AlternatingSection
         sectionTitle="Everything You Need to Manage Your Inventory"
+        sectionHighlight="Manage Your Inventory"
         sectionDescription="A centralized platform designed to simplify project operations, procurement, inventory, and collaboration."
         items={features}
       />

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const Cta = () => {
   return (
@@ -48,12 +49,12 @@ const Cta = () => {
               </div>
 
               {/* Heading */}
-              <h2 className=" mt-2 max-w-[720px] text-[34px] sm:text-[40px] lg:text-[46px] text-white font-medium leading-[1.08] tracking-[-2px] lg:tracking-[-2.5px] " >
+              <h2 className=" font-fraunces mt-2 max-w-[720px] text-[34px] sm:text-[40px] lg:text-[46px] text-white font-medium leading-[1.1]" >
                 Make your next pharmacy day feel lighter.
               </h2>
 
               {/* Description */}
-              <p className=" mt-2 max-w-[650px] text-[16px] leading-[1.7] text-[#D6ECFB] " >
+              <p className=" font-nunito mt-2 max-w-[650px] text-[17px] leading-[1.7] text-[#D6ECFB] " >
                 See how Meditix fits your counter, team and growth plans in a
                 focused 30-minute walkthrough.
               </p>
@@ -69,7 +70,8 @@ const Cta = () => {
             >
               Book a free demo
               <span className=" transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 " >
-                ↗
+               
+                <FiArrowUpRight size={16} />
               </span>
             </motion.a>
           </motion.div>
