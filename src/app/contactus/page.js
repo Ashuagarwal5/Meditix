@@ -31,8 +31,8 @@ const contactDetails = [
   {
     icon: MapPin,
     title: "Visit our office",
-    value: "123 Healthcare Avenue",
-    detail: "Jaipur, India.",
+    value: "3rd Floor, 22, Biswa Nagar, New Sanganer Rd, ",
+    detail: "opposite Metro Pillar No. 75, Jaipur, Rajasthan 302019",
   },
 ];
 

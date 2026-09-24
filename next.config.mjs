@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  output: "export",
+  trailingSlash: true,
+
+  images: {
+    unoptimized: true,
+  },
+
   allowedDevOrigins: [
     "192.168.1.18",
     "192.168.1.23",

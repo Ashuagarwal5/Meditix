@@ -272,7 +272,7 @@ export default function Footer() {
           className="font-nunito text-center text-[13px] text-[#8EADC1] md:text-left">
             © {new Date().getFullYear()} Meditix. Powered by{" "}
             <span className="font-semibold text-white">
-              Proactive Proffesional Services Pvt. Ltd.
+              Proactive Professional Services Pvt. Ltd.
             </span>
           </Link>
 
